@@ -5,7 +5,7 @@ using UnityEngine;
 public class GridSpawner : MonoBehaviour
 {
 	public int grid = 4;
-	public int sizeAcross = 600;
+	public float sizeAcross = 4;
 	public GameObject gridObject;
 
 	private void Start()
@@ -26,11 +26,14 @@ public class GridSpawner : MonoBehaviour
 				var obj = Instantiate(gridObject, transform);
 				obj.transform.localPosition = new Vector3((x - offset) * spacing, (y - offset) * spacing, 0);
 
-				var rect = obj.GetComponent<RectTransform>();
+				obj.transform.localScale = new Vector3(spacing, spacing, 1);
+
+				// if we want to use UI for some reason
+				//var rect = obj.GetComponent<RectTransform>();
 				// set width
-				rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, spacing);
+				//rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, spacing);
 				// set height
-				rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, spacing);
+				//rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, spacing);
 			}
 		}
 	}
