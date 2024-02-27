@@ -3,16 +3,16 @@ using UnityEngine.UI;
 
 public static class GameData
 {
-    private static int BytesRemaining
+    public static int BytesRemaining
     {
         get => PlayerPrefs.GetInt("bytes_remaining", int.MaxValue);
-        set => PlayerPrefs.SetInt("bytes_remaining", value);
+        private set => PlayerPrefs.SetInt("bytes_remaining", value);
     }
 
-    private static int Currency
+    public static int Currency
     {
         get => PlayerPrefs.GetInt("currency", 0);
-        set => PlayerPrefs.SetInt("currency", value);
+        private set => PlayerPrefs.SetInt("currency", value);
     }
 
     public static void EraseBytes(int amount)
