@@ -865,7 +865,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa7b9d657030654099538e2d61e066a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formatString: "Storage Drive H: [{0}] \n{1,6:P1}"
+  formatString: 'Storage Drive H:
+
+    [{0}] {1,6:P1}'
   myVar: 0
 --- !u!224 &579089586 stripped
 RectTransform:
@@ -1842,6 +1844,10 @@ PrefabInstance:
     - target: {fileID: 701084219545717146, guid: 22d699747b51a804bb55b860ff74e8da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251297439814895867, guid: 22d699747b51a804bb55b860ff74e8da, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8887222662312908591, guid: 22d699747b51a804bb55b860ff74e8da, type: 3}
       propertyPath: m_Name
