@@ -5,19 +5,17 @@ using UnityEngine;
 
 public class GridSpawner : MonoBehaviour
 {
-	public int grid = 4;
+	int grid = 4;
 	public float sizeAcross = 4;
 	public GameObject gridObject;
+	public GameStarter gameStarter;
 
 	List<GridButton> buttons = new List<GridButton>();
 
-	private void Start()
+	public void PopulateGrid(int grid)
 	{
-		PopulateGrid();
-	}
+		this.grid = grid;
 
-	void PopulateGrid()
-	{
 		float offset = (grid - 1) / 2f;
 		float spacing = sizeAcross / grid;
 
@@ -48,11 +46,12 @@ public class GridSpawner : MonoBehaviour
 
 	public void CheckDone()
 	{
-		bool allFlipped = buttons.All(x => x.flipped);
+		bool allFlipped = buttons.All(x => x.isOff);
 
 		if (allFlipped)
 		{
 			Destroy(gameObject);
+			gameStarter.MakeGrid();
 		}
 	}
 }
