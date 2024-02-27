@@ -21,18 +21,37 @@ namespace Upgrades
         private void Start()
         {
             Text.text = Upgrade.Name;
-            UpdateButtonText();
+            Refresh();
 
             Button.onClick.AddListener(() =>
             {
                 Upgrade.Level++;
-                UpdateButtonText();
+                Refresh();
             });
+        }
+
+        private void Refresh()
+        {
+            UpdateButtonText();
+#if !UNITY_EDITOR
+            Button.interactable = !Upgrade.IsMaxLevel;
+#endif
         }
 
         private void UpdateButtonText()
         {
-            ButtonText.text = Upgrade.Level.ToString();
+            string line1 = $"({Upgrade.Level}/{Upgrade.MaxLevel})";
+            string line2 = $"Current: {Upgrade.CurrentName}";
+            
+            if (!Upgrade.IsMaxLevel)
+            {
+                string line3 = $"Next: {Upgrade.NextName}";
+                ButtonText.text = $"{line1}\n{line2}\n{line3}";
+            }
+            else
+            {
+                ButtonText.text = $"{line1}\n{line2}\n.";
+            }
         }
     }
 }
