@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Upgrades;
 
 public class GameStarter : MonoBehaviour
 {
     public GameObject grid;
+    public Vector2IntUpgradeData gridSize;
 
-    int testVal = 4;
+    public GridSpawner gridSpawner;
 
     void Start()
     {
@@ -16,9 +18,8 @@ public class GameStarter : MonoBehaviour
     public void MakeGrid()
     {
         var obj = Instantiate(grid);
-        var spawner = obj.GetComponent<GridSpawner>();
-        spawner.PopulateGrid(testVal);
-        spawner.gameStarter = this;
-		testVal++;
+        gridSpawner = obj.GetComponent<GridSpawner>();
+		gridSpawner.PopulateGrid(gridSize.CurrentValue.x);
+		gridSpawner.gameStarter = this;
     }
 }
