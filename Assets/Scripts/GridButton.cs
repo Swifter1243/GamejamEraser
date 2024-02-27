@@ -48,18 +48,17 @@ public class GridButton : MonoBehaviour
 	{
 		TurnOff();
 
-		if (cursorRadius.CurrentValue > 1)
-		{
-            foreach (var item in gridSpawner.GetAllButtonsOn())
-            {
-				float deltaX = item.x - x;
-				float deltaY = item.y - y;
-				float dist = deltaX * deltaX + deltaY * deltaY;
+		float radius = cursorRadius.CurrentValue;
 
-				if (dist <= cursorRadius.CurrentValue * cursorRadius.CurrentValue)
-				{
-					item.TurnOff();
-				}
+		if (radius > 1)
+		{
+			var inCircle = Helpers.GetCircle(new Vector2Int(x, y), radius);
+
+            foreach (var item in inCircle)
+            {
+                var success = gridSpawner.buttons.TryGetValue(item, out  var button);
+
+				if (success) button.TurnOff();
             }
         }
 	}

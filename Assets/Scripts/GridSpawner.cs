@@ -10,15 +10,19 @@ public class GridSpawner : MonoBehaviour
 	public GameObject gridObject;
 	public GameStarter gameStarter;
 
-	List<GridButton> buttons = new List<GridButton>();
+	public Dictionary<Vector2Int, GridButton> buttons = new Dictionary<Vector2Int, GridButton>();
 
-	public IEnumerable<GridButton> GetAllButtonsOn() => buttons.Where(x => !x.isOff);
+	public IEnumerable<GridButton> GetAllButtonsOn() => buttons.Values.Where(x => !x.isOff);
 
-	public void TurnRandomButtonOff()
+	public bool TurnRandomButtonOff()
 	{
 		var list = GetAllButtonsOn();
+
+		if (list.Count() == 0) return false;
+
 		int index = Random.Range(0, list.Count());
 		list.ToList()[index].TurnOff();
+		return true;
 	}
 
 	public void PopulateGrid(int grid)
@@ -28,18 +32,17 @@ public class GridSpawner : MonoBehaviour
 		float offset = (grid - 1) / 2f;
 		float spacing = sizeAcross / grid;
 
-		for (int x = 0; x < grid; x++)
+		for (int y = 0; y < grid; y++)
 		{
-			for (int y = 0; y < grid; y++)
+			for (int x = 0; x < grid; x++)
 			{
-
 				var obj = Instantiate(gridObject, transform);
 				obj.transform.localPosition = new Vector3((x - offset) * spacing, (y - offset) * spacing, 0);
 
 				obj.transform.localScale = new Vector3(spacing, spacing, 1);
 
 				var button = obj.GetComponent<GridButton>();
-				buttons.Add(button);
+				buttons[new Vector2Int(x, y)] = button;
 				button.gridSpawner = this;
 				button.x = x;
 				button.y = y;
@@ -57,7 +60,7 @@ public class GridSpawner : MonoBehaviour
 
 	public void CheckDone()
 	{
-		bool allFlipped = buttons.All(x => x.isOff);
+		bool allFlipped = buttons.Values.All(x => x.isOff);
 
 		if (allFlipped)
 		{
