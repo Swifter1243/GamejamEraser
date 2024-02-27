@@ -1,24 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Upgrades;
 
 public class GameStarter : MonoBehaviour
 {
     public GameObject grid;
+    public Vector2IntUpgradeData gridSize;
+    public IntUpgradeData idleRate;
 
-    int testVal = 4;
+    public GridSpawner gridSpawner;
 
     void Start()
     {
         MakeGrid();
     }
 
-    public void MakeGrid()
+    float rateAddup = 0;
+
+	private void Update()
+	{
+        rateAddup += Time.deltaTime * idleRate.CurrentValue;
+        
+        while (rateAddup >= 1) {
+            rateAddup -= 1;
+            gridSpawner.TurnRandomButtonOff();
+        }
+	}
+
+	public void MakeGrid()
     {
         var obj = Instantiate(grid);
-        var spawner = obj.GetComponent<GridSpawner>();
-        spawner.PopulateGrid(testVal);
-        spawner.gameStarter = this;
-		testVal++;
+        gridSpawner = obj.GetComponent<GridSpawner>();
+		gridSpawner.PopulateGrid(gridSize.CurrentValue.x);
+		gridSpawner.gameStarter = this;
     }
 }

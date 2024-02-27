@@ -1,18 +1,20 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public static class GameData
 {
-    private static int BytesRemaining
+    private static Progress Progress => _progress ? _progress : _progress = Object.FindObjectOfType<Progress>();
+    private static Progress _progress;
+
+    public static int BytesRemaining
     {
         get => PlayerPrefs.GetInt("bytes_remaining", int.MaxValue);
-        set => PlayerPrefs.SetInt("bytes_remaining", value);
+        private set => PlayerPrefs.SetInt("bytes_remaining", value);
     }
 
-    private static int Currency
+    public static int Currency
     {
         get => PlayerPrefs.GetInt("currency", 0);
-        set => PlayerPrefs.SetInt("currency", value);
+        private set => PlayerPrefs.SetInt("currency", value);
     }
 
     public static void EraseBytes(int amount)
@@ -20,6 +22,10 @@ public static class GameData
         BytesRemaining -= amount;
         Currency += amount;
 
-        Object.FindObjectOfType<Slider>().value = BytesRemaining / (float) int.MaxValue;
+        Progress progress = Progress;
+
+        float percentRemaining = BytesRemaining / (float) int.MaxValue;
+        progress.Slider.value = percentRemaining;
+        progress.Text.text = $"{BytesRemaining} / {int.MaxValue} ({percentRemaining:P})";
     }
 }
