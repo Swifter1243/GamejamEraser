@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Upgrades
 {
-    public class UpgradeData<T> : ScriptableObject
+    public class UpgradeData<T> : UpgradeData
     {
-        public string CurrentName => Upgrades[Level].Name;
+        public override string CurrentName => Upgrades[Level].Name;
         public T CurrentValue => Upgrades[Level].Value;
 
         public int Level
@@ -15,10 +15,10 @@ namespace Upgrades
         }
 
         [field: SerializeField]
-        public string Name { get; private set; }
+        public override string Name { get; protected set; }
 
         [field: SerializeField]
-        public string Key { get; private set; }
+        public override string Key { get; protected set; }
 
         [field: SerializeField]
         public Upgrade[] Upgrades { get; private set; }
@@ -32,5 +32,12 @@ namespace Upgrades
             [field: SerializeField]
             public T Value { get; private set; }
         }
+    }
+
+    public abstract class UpgradeData : ScriptableObject
+    {
+        public abstract string Name { get; protected set; }
+        public abstract string Key { get; protected set; }
+        public abstract string CurrentName { get; }
     }
 }
