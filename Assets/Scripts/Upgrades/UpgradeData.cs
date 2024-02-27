@@ -6,6 +6,9 @@ namespace Upgrades
     public class UpgradeData<T> : UpgradeData
     {
         public override string CurrentName => Upgrades[Level].Name;
+        public override string NextName => Upgrades[Helpers.AssertRange(Level + 1, 0, MaxLevel, MaxLevel)].Name;
+        public override bool IsMaxLevel => Level == MaxLevel;
+        public override int MaxLevel => Upgrades.Length - 1;
         public T CurrentValue => Upgrades[Level].Value;
 
         public override int Level
@@ -39,6 +42,9 @@ namespace Upgrades
         public abstract string Name { get; protected set; }
         public abstract string Key { get; protected set; }
         public abstract string CurrentName { get; }
+        public abstract string NextName { get; }
         public abstract int Level { get; set; }
+        public abstract int MaxLevel { get; }
+        public abstract bool IsMaxLevel { get; }
     }
 }
