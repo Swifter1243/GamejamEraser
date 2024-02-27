@@ -17,23 +17,34 @@ MonoBehaviour:
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: 1 B
     <Value>k__BackingField: 1
+    <Cost>k__BackingField: 5
   - <Name>k__BackingField: 4 B
     <Value>k__BackingField: 4
+    <Cost>k__BackingField: 50
   - <Name>k__BackingField: 16 B
     <Value>k__BackingField: 16
+    <Cost>k__BackingField: 250
   - <Name>k__BackingField: 64 B
     <Value>k__BackingField: 64
+    <Cost>k__BackingField: 750
   - <Name>k__BackingField: 256 B
     <Value>k__BackingField: 256
+    <Cost>k__BackingField: 1500
   - <Name>k__BackingField: 1 kB
     <Value>k__BackingField: 1000
+    <Cost>k__BackingField: 3000
   - <Name>k__BackingField: 2 kB
     <Value>k__BackingField: 2000
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 4 kB
     <Value>k__BackingField: 4000
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 8 kB
     <Value>k__BackingField: 8000
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 16 kB
     <Value>k__BackingField: 16000
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 32 kB
     <Value>k__BackingField: 32000
+    <Cost>k__BackingField: 0
