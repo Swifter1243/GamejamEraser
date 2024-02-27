@@ -38,7 +38,7 @@ public class ProgressFormat : MonoBehaviour
 				}
 				else if (curFrac > 0) //In-progress
 				{
-					chars[i] = progressChars[Mathf.FloorToInt(curFrac) * chars.Length];
+					chars[i] = progressChars[Mathf.FloorToInt(curFrac * progressChars.Length)];
 				}
 				else //Blank
 				{
