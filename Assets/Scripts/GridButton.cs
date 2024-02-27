@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Upgrades;
 
 public class GridButton : MonoBehaviour
 {
 	Color onColor = Color.green;
 	Color offColor = Color.gray;
 	public GridSpawner spawner;
+
+	public IntUpgradeData cellValue;
 
 	public bool isOff;
 
@@ -39,6 +42,7 @@ public class GridButton : MonoBehaviour
 	{
 		if (!isOff)
 		{
+			GameData.EraseBytes(cellValue.CurrentValue);
 			UpdateFlip(true);
 			spawner.CheckDone();
 		}
