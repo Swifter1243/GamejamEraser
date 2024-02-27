@@ -9,33 +9,33 @@ public class GridButton : MonoBehaviour
 	Color offColor = Color.gray;
 	public GridSpawner spawner;
 
-	public bool flipped;
+	public bool isOff;
 
 	private void Start()
 	{
-		UpdateFlip(Random.Range(0, 2) == 0);
+		UpdateFlip(Random.Range(0, 4) == 0);
 	}
 
 	private void OnMouseEnter()
 	{
 		if (Input.GetMouseButton(0))
 		{
-			DoAction();
+			TurnOff();
 		}
 	}
 
 	private void OnMouseDown()
 	{
-		DoAction();
+		TurnOff();
 	}
 
-	void UpdateFlip(bool flipped)
+	void UpdateFlip(bool isOff)
 	{
-		this.flipped = flipped;
-		GetComponent<SpriteRenderer>().color = flipped ? offColor : onColor;
+		this.isOff = isOff;
+		GetComponent<SpriteRenderer>().color = isOff ? offColor : onColor;
 	}
 
-	public void DoAction()
+	public void TurnOff()
 	{
 		UpdateFlip(true);
 		spawner.CheckDone();
