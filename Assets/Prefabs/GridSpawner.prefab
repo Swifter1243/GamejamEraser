@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea2d3f33041278489f183c232b4289f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: 8
-  sizeAcross: 8
+  sizeAcross: 6
   gridObject: {fileID: 6596864628000814767, guid: 69c9df0e0677b2e4d93bfa1cb2588314, type: 3}
   gameStarter: {fileID: 0}

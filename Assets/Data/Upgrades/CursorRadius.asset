@@ -16,12 +16,17 @@ MonoBehaviour:
   <Key>k__BackingField: cursor_radius
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: 1
-    <Value>k__BackingField: 1
+    <Value>k__BackingField: 0.9
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 2
     <Value>k__BackingField: 1.5
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 3
     <Value>k__BackingField: 2.25
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 4
     <Value>k__BackingField: 3.25
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 5
     <Value>k__BackingField: 4.25
+    <Cost>k__BackingField: 0
