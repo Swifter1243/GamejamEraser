@@ -3,7 +3,7 @@ Shader "Unlit/Scanline"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _BlurSpread ("Blur Spread", Range(0, 0.3)) = 0.01
+        _BlurSpread ("Blur Spread", Range(0, 0.03)) = 0.01
         _Iterations ("Iterations", Integer) = 10
     }
     SubShader

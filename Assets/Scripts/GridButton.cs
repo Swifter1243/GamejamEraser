@@ -6,8 +6,8 @@ using Upgrades;
 
 public class GridButton : MonoBehaviour
 {
-	Color onColor = Color.green;
-	Color offColor = Color.gray;
+	Color onColor = Color.white;
+	Color offColor = Color.black;
 	public GridSpawner gridSpawner;
 
 	public int x;
