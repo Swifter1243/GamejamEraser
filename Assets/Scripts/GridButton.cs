@@ -1,30 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GridButton : MonoBehaviour
 {
-	Color onColor = Color.white;
-	Color offColor = Color.red;
+	Color onColor = Color.green;
+	Color offColor = Color.gray;
+	public GridSpawner spawner;
 
-	bool flipped = true;
+	public bool flipped;
+
+	private void Start()
+	{
+		UpdateFlip(Random.Range(0, 2) == 0);
+	}
 
 	private void OnMouseEnter()
 	{
 		if (Input.GetMouseButton(0))
 		{
-			Toggle();
+			DoAction();
 		}
 	}
 
 	private void OnMouseDown()
 	{
-		Toggle();
+		DoAction();
 	}
 
-	public void Toggle()
+	void UpdateFlip(bool flipped)
 	{
-		flipped = !flipped;
-		GetComponent<SpriteRenderer>().color = flipped ? onColor : offColor;
+		this.flipped = flipped;
+		GetComponent<SpriteRenderer>().color = flipped ? offColor : onColor;
+	}
+
+	public void DoAction()
+	{
+		UpdateFlip(true);
+		spawner.CheckDone();
 	}
 }

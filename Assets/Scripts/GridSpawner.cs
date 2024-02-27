@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GridSpawner : MonoBehaviour
@@ -7,6 +8,8 @@ public class GridSpawner : MonoBehaviour
 	public int grid = 4;
 	public float sizeAcross = 4;
 	public GameObject gridObject;
+
+	List<GridButton> buttons = new List<GridButton>();
 
 	private void Start()
 	{
@@ -28,6 +31,11 @@ public class GridSpawner : MonoBehaviour
 
 				obj.transform.localScale = new Vector3(spacing, spacing, 1);
 
+				var button = obj.GetComponent<GridButton>();
+				buttons.Add(button);
+				button.spawner = this;
+				
+
 				// if we want to use UI for some reason
 				//var rect = obj.GetComponent<RectTransform>();
 				// set width
@@ -35,6 +43,16 @@ public class GridSpawner : MonoBehaviour
 				// set height
 				//rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, spacing);
 			}
+		}
+	}
+
+	public void CheckDone()
+	{
+		bool allFlipped = buttons.All(x => x.flipped);
+
+		if (allFlipped)
+		{
+			Destroy(gameObject);
 		}
 	}
 }
