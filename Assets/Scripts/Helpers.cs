@@ -14,4 +14,23 @@ public static class Helpers
 
         return value;
     }
+
+    public static IEnumerable<Vector2Int> GetCircle(Vector2Int centre, float radius)
+    {
+        int radiusCeil = Mathf.CeilToInt(radius);
+        float sqrRadius = radius * radius;
+
+        for (int x = -radiusCeil; x <= radiusCeil; x++)
+        {
+            for (int y = -radiusCeil; y < radiusCeil; y++)
+            {
+                Vector2Int v2 = new Vector2Int(x, y);
+
+                if ((v2 - centre).sqrMagnitude <= sqrRadius)
+                {
+                    yield return v2;
+                }
+            }
+        }
+    }
 }
