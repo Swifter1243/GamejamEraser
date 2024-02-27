@@ -46,7 +46,7 @@ public class ProgressFormat : MonoBehaviour
 				}
 			}
 
-			text.text = string.Format(formatString, chars, frac);
+			text.text = string.Format(formatString, new string(chars), frac);
 			//text.text = string.Format(formatString, chars, value, int.MaxValue);
 		}
 	}
