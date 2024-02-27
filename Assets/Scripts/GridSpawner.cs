@@ -40,7 +40,9 @@ public class GridSpawner : MonoBehaviour
 
 				var button = obj.GetComponent<GridButton>();
 				buttons.Add(button);
-				button.spawner = this;
+				button.gridSpawner = this;
+				button.x = x;
+				button.y = y;
 				
 
 				// if we want to use UI for some reason

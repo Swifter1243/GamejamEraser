@@ -274,6 +274,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 382393260734783344, guid: 644bfc6ee0516134b875f9a4fffa8ab7, type: 3}
+  gridSize: {fileID: 11400000, guid: 9fad6fa13a465a54bb521ca7197791b9, type: 2}
+  gridSpawner: {fileID: 0}
 --- !u!1 &602332987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,7 +1070,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 115065319432688511, guid: efb885cfcff168445b672191d8fce3f9, type: 3}
       propertyPath: m_Name
-      value: Cursor Size
+      value: Cursor Radius
       objectReference: {fileID: 0}
     - target: {fileID: 1749656446673760776, guid: efb885cfcff168445b672191d8fce3f9, type: 3}
       propertyPath: m_Pivot.x
