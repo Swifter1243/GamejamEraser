@@ -21,7 +21,6 @@ namespace Upgrades
         private void Start()
         {
             Text.text = Upgrade.Name;
-            Refresh();
 
             Button.onClick.AddListener(() =>
             {
@@ -30,11 +29,16 @@ namespace Upgrades
             });
         }
 
+        private void Update()
+        {
+            Refresh();
+        }
+
         private void Refresh()
         {
             UpdateButtonText();
 #if !UNITY_EDITOR
-            Button.interactable = !Upgrade.IsMaxLevel;
+            Button.interactable = !Upgrade.IsMaxLevel && GameData.Currency >= Upgrade.NextCost;
 #endif
         }
 

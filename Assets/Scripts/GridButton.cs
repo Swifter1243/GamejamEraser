@@ -19,7 +19,7 @@ public class GridButton : MonoBehaviour
 
 	public bool isOff;
 
-	private void Start()
+	private void Awake()
 	{
 		renderer = GetComponent<SpriteRenderer>();
 		UpdateFlip(Random.Range(0, 4) == 0);
@@ -52,11 +52,11 @@ public class GridButton : MonoBehaviour
 
 		if (radius > 1)
 		{
-			var inCircle = Helpers.GetCircle(new Vector2Int(x, y), radius);
+			IEnumerable<Vector2Int> inCircle = Helpers.GetCircle(new Vector2Int(x, y), radius);
 
             foreach (var item in inCircle)
             {
-                var success = gridSpawner.buttons.TryGetValue(item, out  var button);
+                var success = gridSpawner.buttons.TryGetValue(item, out var button);
 
 				if (success) button.TurnOff();
             }

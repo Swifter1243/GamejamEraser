@@ -20,9 +20,9 @@ public static class Helpers
         int radiusCeil = Mathf.CeilToInt(radius);
         float sqrRadius = radius * radius;
 
-        for (int x = -radiusCeil; x <= radiusCeil; x++)
+        for (int x = centre.x - radiusCeil; x <= centre.x + radiusCeil; x++)
         {
-            for (int y = -radiusCeil; y <= radiusCeil; y++)
+            for (int y = centre.y - radiusCeil; y <= centre.y + radiusCeil; y++)
             {
                 var v2 = new Vector2Int(x, y);
 
