@@ -52,26 +52,33 @@ Shader "Unlit/Scanline"
 
                 float4 col = getScreenColor(i.uv);
 
-                col = col + pow(col, 1.8);
+                // col = col + pow(col, 1.8);
 
-                float4 offset = float4(1, 0.99, 0.99, 0.2);
-                float4 cutColor = col * sin(offset * (i.uv.y * 300 + _Time.y * 3 + hashwithoutsine11(_Time.y * 200)));
+                float4 offset = float4(1, 0.99, 0.998, 0.2);
+                float4 sinColor = sin(offset * (i.uv.y * 300 + _Time.y * 3 + hashwithoutsine11(_Time.y * 200)));
+                float4 cutColor = col * sinColor;
 
                 col = lerp(col, cutColor, 0.2);
 
                 float4 average = 0;
+
+                col = lerp(col, col * 20, 0.1);
 
                 for (int j = -_Iterations; j < _Iterations; j++)
                 {
                     float percent = 2. * j / _Iterations;
                     float2 newUV = float2(i.uv.x + _BlurSpread * percent, i.uv.y);
                     float falloff = saturate(1 - abs(percent));
-                    average += getScreenColor(newUV) * float4(1, 0.6, 0.3, 0) * lerp(1, falloff, 0.9);
+                    float4 newCol = getScreenColor(newUV) * float4(1, 0.6, 0.3, 0);
+                    average += newCol * lerp(1, falloff, 0.9);
+
+                    if (abs(j) == 1) average += newCol ;
                 }
 
                 average /= _Iterations;
 
-                col += average * 2;
+                col += average;
+                col += sinColor * 0.01;
 
                 col *= 1 - f;
                 
