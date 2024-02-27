@@ -15,52 +15,20 @@ public class GridButton : MonoBehaviour
 
 	public IntUpgradeData cellValue;
 	public FloatUpgradeData cursorRadius;
-	SpriteRenderer renderer;
+	SpriteRenderer spriteRenderer;
 
 	public bool isOff;
 
 	private void Awake()
 	{
-		renderer = GetComponent<SpriteRenderer>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 		UpdateFlip(Random.Range(0, 4) == 0);
-	}
-
-	private void OnMouseEnter()
-	{
-		if (Input.GetMouseButton(0))
-		{
-			ClickedTurnOff();
-		}
-	}
-
-	private void OnMouseDown()
-	{
-		ClickedTurnOff();
 	}
 
 	void UpdateFlip(bool isOff)
 	{
 		this.isOff = isOff;
-		renderer.color = isOff ? offColor : onColor;
-	}
-
-	public void ClickedTurnOff()
-	{
-		TurnOff();
-
-		float radius = cursorRadius.CurrentValue;
-
-		if (radius > 1)
-		{
-			IEnumerable<Vector2Int> inCircle = Helpers.GetCircle(new Vector2Int(x, y), radius);
-
-            foreach (var item in inCircle)
-            {
-                var success = gridSpawner.buttons.TryGetValue(item, out var button);
-
-				if (success) button.TurnOff();
-            }
-        }
+		spriteRenderer.color = isOff ? offColor : onColor;
 	}
 
 	public void TurnOff()

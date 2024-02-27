@@ -11,7 +11,7 @@ public class GameStarter : MonoBehaviour
 
     public GridSpawner gridSpawner;
 
-    void Start()
+    void Awake()
     {
         MakeGrid();
     }
