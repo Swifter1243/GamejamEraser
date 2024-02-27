@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1749656446673760776}
   - component: {fileID: 7022043318142788363}
   m_Layer: 5
-  m_Name: Upgrade 1
+  m_Name: UpgradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,9 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Upgrade>k__BackingField: {fileID: 0}
-  <Text>k__BackingField: {fileID: 0}
+  <Text>k__BackingField: {fileID: 8386480844177468414}
   <Button>k__BackingField: {fileID: 8511655520247198282}
-  <ButtonText>k__BackingField: {fileID: 0}
+  <ButtonText>k__BackingField: {fileID: 3327546381050159405}
 --- !u!1 &4745248809962809325
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8228354164191813904, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_Name
-      value: MainText24p
+      value: MainText32p
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -283,6 +283,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
   m_PrefabInstance: {fileID: 2141260250968514537}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3327546381050159405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
+  m_PrefabInstance: {fileID: 2141260250968514537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3924215572788987939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,6 +412,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8165653653636670140, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
   m_PrefabInstance: {fileID: 3924215572788987939}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8386480844177468414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
+  m_PrefabInstance: {fileID: 3924215572788987939}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8793335452185343097
 PrefabInstance:
   m_ObjectHideFlags: 0
