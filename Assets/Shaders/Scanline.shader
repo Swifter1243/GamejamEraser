@@ -44,6 +44,12 @@ Shader "Unlit/Scanline"
 
             fixed4 frag (v2f i) : SV_Target
             {
+                i.uv = i.uv * 2 - 1;
+                float f = pow(abs(i.uv.x), 2);
+                //i.uv.y = lerp(i.uv.y, pow(i.uv.y, 3), 0.3);
+                i.uv.y *= 1 + f * 0.1;
+                i.uv = (i.uv + 1) * 0.5;
+
                 float4 col = getScreenColor(i.uv);
 
                 float4 cutColor = col * sin(i.uv.y * 300 + _Time.y * 3 + hashwithoutsine11(_Time.y * 200));
@@ -61,6 +67,8 @@ Shader "Unlit/Scanline"
                 average /= _Iterations;
 
                 col += average;
+
+                col *= 1 - f;
                 
                 return col;
             }

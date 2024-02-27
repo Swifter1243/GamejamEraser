@@ -14,6 +14,6 @@ public class CameraScaler : MonoBehaviour
 		int size = Mathf.Max(GridSizeUpgrade.CurrentValue.x, GridSizeUpgrade.CurrentValue.y);
 		Camera.orthographicSize = size;
 		Vector2Int offset = GridSizeUpgrade.CurrentValue / 2;
-		Camera.transform.position = new Vector3(offset.x, offset.y, -10);
+		Camera.transform.position = new Vector3(offset.x - 0.5f, offset.y - 0.5f, -10);
 	}
 }
