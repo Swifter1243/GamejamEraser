@@ -37,7 +37,10 @@ public class GridButton : MonoBehaviour
 
 	public void TurnOff()
 	{
-		UpdateFlip(true);
-		spawner.CheckDone();
+		if (!isOff)
+		{
+			UpdateFlip(true);
+			spawner.CheckDone();
+		}
 	}
 }

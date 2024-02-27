@@ -12,6 +12,15 @@ public class GridSpawner : MonoBehaviour
 
 	List<GridButton> buttons = new List<GridButton>();
 
+	public IEnumerable<GridButton> GetAllButtonsOn() => buttons.Where(x => !x.isOff);
+
+	public void TurnRandomButtonOff()
+	{
+		var list = GetAllButtonsOn();
+		int index = Random.Range(0, list.Count());
+		list.ToList()[index].TurnOff();
+	}
+
 	public void PopulateGrid(int grid)
 	{
 		this.grid = grid;
