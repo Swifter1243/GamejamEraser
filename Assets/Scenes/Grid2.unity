@@ -536,8 +536,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1152, y: 768}
+  m_AnchoredPosition: {x: 576, y: 0}
+  m_SizeDelta: {x: 0, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259293000
 MonoBehaviour:
@@ -601,6 +601,7 @@ MonoBehaviour:
   gridSize: {fileID: 11400000, guid: 9fad6fa13a465a54bb521ca7197791b9, type: 2}
   idleRate: {fileID: 11400000, guid: 15f86b4a3c116104eaf41214d651ca46, type: 2}
   gridSpawner: {fileID: 0}
+  cameraScaler: {fileID: 405004202}
 --- !u!224 &371159363 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2616990733179689785, guid: 6cf817602941d1f46901f0532fc1efe9, type: 3}
@@ -618,6 +619,7 @@ GameObject:
   - component: {fileID: 405004200}
   - component: {fileID: 405004199}
   - component: {fileID: 405004202}
+  - component: {fileID: 405004203}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -713,6 +715,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <GridSizeUpgrade>k__BackingField: {fileID: 11400000, guid: 9fad6fa13a465a54bb521ca7197791b9, type: 2}
   <Camera>k__BackingField: {fileID: 405004200}
+--- !u!114 &405004203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405004198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a5137fef030a2478e7f8890ff6b065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _postProcessingMaterial: {fileID: 2100000, guid: 8943b0080d9b8f240a8e4002b89c190e, type: 2}
+  _pass: 0
 --- !u!1 &430056297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,8 +1164,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_HandleRect: {fileID: 969745902}
   m_Direction: 2
-  m_Value: 0.5
-  m_Size: 0.625
+  m_Value: 0.4999999
+  m_Size: 0.62500006
   m_NumberOfSteps: 10
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1343,7 +1359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -8.5, y: 21.333344}
+  m_AnchoredPosition: {x: -8.5, y: 21.333374}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378350257
@@ -1588,8 +1604,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 768, y: 768}
+  m_AnchoredPosition: {x: 1536, y: 0}
+  m_SizeDelta: {x: 0, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1625894794
 MonoBehaviour:
