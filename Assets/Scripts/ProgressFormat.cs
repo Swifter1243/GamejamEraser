@@ -59,11 +59,4 @@ public class ProgressFormat : MonoBehaviour
 	{
 		text = GetComponent<TMP_Text>();   
 	}
-
-
-
-    private void Update()
-    {
-		this.Progress = UnityEngine.Random.Range(0, int.MaxValue);
-    }
 }
