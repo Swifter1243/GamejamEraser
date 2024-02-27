@@ -24,7 +24,7 @@ public static class Helpers
         {
             for (int y = -radiusCeil; y < radiusCeil; y++)
             {
-                Vector2Int v2 = new Vector2Int(x, y);
+                var v2 = new Vector2Int(x, y);
 
                 if ((v2 - centre).sqrMagnitude <= sqrRadius)
                 {
