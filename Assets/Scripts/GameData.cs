@@ -20,6 +20,10 @@ public static class GameData
         BytesRemaining -= amount;
         Currency += amount;
 
-        Object.FindObjectOfType<Slider>().value = BytesRemaining / (float) int.MaxValue;
+        var progress = Object.FindObjectOfType<Progress>();
+
+        float percentRemaining = BytesRemaining / (float) int.MaxValue;
+        progress.Slider.value = percentRemaining;
+        progress.Text.text = $"{BytesRemaining} / {int.MaxValue} ({percentRemaining:P})";
     }
 }
