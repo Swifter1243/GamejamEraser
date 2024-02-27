@@ -55,7 +55,7 @@ Shader "Unlit/Scanline"
                 for (int j = 0; j < _Iterations; j++)
                 {
                     float2 newUV = float2(i.uv.x + _BlurSpread * j, i.uv.y);
-                    average += getScreenColor(newUV) * float4(1, 0.4, 0.2, 0);
+                    average += getScreenColor(newUV) * float4(1, 0.3, 0.2, 0);
                 }
 
                 average /= _Iterations;

@@ -277,6 +277,7 @@ MonoBehaviour:
   gridSize: {fileID: 11400000, guid: 9fad6fa13a465a54bb521ca7197791b9, type: 2}
   idleRate: {fileID: 11400000, guid: 15f86b4a3c116104eaf41214d651ca46, type: 2}
   gridSpawner: {fileID: 0}
+  cameraScaler: {fileID: 602332992}
 --- !u!1 &602332987
 GameObject:
   m_ObjectHideFlags: 0
