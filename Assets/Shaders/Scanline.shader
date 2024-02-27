@@ -54,7 +54,8 @@ Shader "Unlit/Scanline"
 
                 col = col + pow(col, 1.8);
 
-                float4 cutColor = col * sin(i.uv.y * 300 + _Time.y * 3 + hashwithoutsine11(_Time.y * 200));
+                float4 offset = float4(1, 0.99, 0.99, 0.2);
+                float4 cutColor = col * sin(offset * (i.uv.y * 300 + _Time.y * 3 + hashwithoutsine11(_Time.y * 200)));
 
                 col = lerp(col, cutColor, 0.2);
 
