@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed8a66d26413824993e69462ff9e941, type: 3}
+  m_Name: GridSize
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Grid Size
+  <Key>k__BackingField: grid_size
+  <Upgrades>k__BackingField:
+  - <Name>k__BackingField: 4x4
+    <Value>k__BackingField: {x: 4, y: 4}
+  - <Name>k__BackingField: 8x8
+    <Value>k__BackingField: {x: 8, y: 8}
+  - <Name>k__BackingField: 12x12
+    <Value>k__BackingField: {x: 12, y: 12}
+  - <Name>k__BackingField: 16x16
+    <Value>k__BackingField: {x: 16, y: 16}
+  - <Name>k__BackingField: 32x32
+    <Value>k__BackingField: {x: 32, y: 32}
+  - <Name>k__BackingField: 64x64
+    <Value>k__BackingField: {x: 64, y: 64}
