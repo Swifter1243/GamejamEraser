@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class GameData
 {
-    public static int BytesRemaining
+    private static int BytesRemaining
     {
         get => PlayerPrefs.GetInt("bytes_remaining", int.MaxValue);
         set => PlayerPrefs.SetInt("bytes_remaining", value);
     }
 
-    public static int Currency
+    private static int Currency
     {
         get => PlayerPrefs.GetInt("currency", 0);
         set => PlayerPrefs.SetInt("currency", value);
@@ -18,5 +19,7 @@ public static class GameData
     {
         BytesRemaining -= amount;
         Currency += amount;
+
+        Object.FindObjectOfType<Slider>().value = BytesRemaining / (float) int.MaxValue;
     }
 }
