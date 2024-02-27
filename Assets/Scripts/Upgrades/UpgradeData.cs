@@ -8,7 +8,7 @@ namespace Upgrades
         public override string CurrentName => Upgrades[Level].Name;
         public T CurrentValue => Upgrades[Level].Value;
 
-        public int Level
+        public override int Level
         {
             get => PlayerPrefs.GetInt(Key, 0);
             set => PlayerPrefs.SetInt(Key, Helpers.AssertRange(value, 0, Upgrades.Length - 1, 0));
@@ -39,5 +39,6 @@ namespace Upgrades
         public abstract string Name { get; protected set; }
         public abstract string Key { get; protected set; }
         public abstract string CurrentName { get; }
+        public abstract int Level { get; set; }
     }
 }
