@@ -10,6 +10,7 @@ public class GameStarter : MonoBehaviour
     public IntUpgradeData idleRate;
 
     public GridSpawner gridSpawner;
+    public CameraScaler cameraScaler;
 
     void Awake()
     {
@@ -30,6 +31,7 @@ public class GameStarter : MonoBehaviour
 
 	public void MakeGrid()
     {
+        cameraScaler.FixCamera();
         var obj = Instantiate(grid);
         gridSpawner = obj.GetComponent<GridSpawner>();
 		gridSpawner.PopulateGrid(gridSize.CurrentValue.x);

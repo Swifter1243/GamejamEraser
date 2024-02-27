@@ -3,7 +3,7 @@ Shader "Unlit/Scanline"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _BlurSpread ("Blur Spread", Range(0, 0.02)) = 0.01
+        _BlurSpread ("Blur Spread", Range(0, 0.3)) = 0.01
         _Iterations ("Iterations", Integer) = 10
     }
     SubShader
@@ -44,23 +44,36 @@ Shader "Unlit/Scanline"
 
             fixed4 frag (v2f i) : SV_Target
             {
+                i.uv = i.uv * 2 - 1;
+                float f = pow(abs(i.uv.x), 2);
+                //i.uv.y = lerp(i.uv.y, pow(i.uv.y, 3), 0.3);
+                i.uv.y *= 1 + f * 0.1;
+                i.uv = (i.uv + 1) * 0.5;
+
                 float4 col = getScreenColor(i.uv);
 
-                float4 cutColor = col * sin(i.uv.y * 300 + _Time.y * 3 + hashwithoutsine11(_Time.y * 200));
+                col = col + pow(col, 1.8);
+
+                float4 offset = float4(1, 0.99, 0.99, 0.2);
+                float4 cutColor = col * sin(offset * (i.uv.y * 300 + _Time.y * 3 + hashwithoutsine11(_Time.y * 200)));
 
                 col = lerp(col, cutColor, 0.2);
 
                 float4 average = 0;
 
-                for (int j = 0; j < _Iterations; j++)
+                for (int j = -_Iterations; j < _Iterations; j++)
                 {
-                    float2 newUV = float2(i.uv.x + _BlurSpread * j, i.uv.y);
-                    average += getScreenColor(newUV) * float4(1, 0.4, 0.2, 0);
+                    float percent = 2. * j / _Iterations;
+                    float2 newUV = float2(i.uv.x + _BlurSpread * percent, i.uv.y);
+                    float falloff = saturate(1 - abs(percent));
+                    average += getScreenColor(newUV) * float4(1, 0.6, 0.3, 0) * lerp(1, falloff, 0.9);
                 }
 
                 average /= _Iterations;
 
-                col += average;
+                col += average * 2;
+
+                col *= 1 - f;
                 
                 return col;
             }
