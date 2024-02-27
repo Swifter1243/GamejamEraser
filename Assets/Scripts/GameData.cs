@@ -1,8 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public static class GameData
 {
+    private static Progress Progress => _progress ? _progress : _progress = Object.FindObjectOfType<Progress>();
+    private static Progress _progress;
+
     public static int BytesRemaining
     {
         get => PlayerPrefs.GetInt("bytes_remaining", int.MaxValue);
@@ -20,7 +22,7 @@ public static class GameData
         BytesRemaining -= amount;
         Currency += amount;
 
-        var progress = Object.FindObjectOfType<Progress>();
+        Progress progress = Progress;
 
         float percentRemaining = BytesRemaining / (float) int.MaxValue;
         progress.Slider.value = percentRemaining;
