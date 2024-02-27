@@ -22,7 +22,7 @@ public static class Helpers
 
         for (int x = -radiusCeil; x <= radiusCeil; x++)
         {
-            for (int y = -radiusCeil; y < radiusCeil; y++)
+            for (int y = -radiusCeil; y <= radiusCeil; y++)
             {
                 var v2 = new Vector2Int(x, y);
 
