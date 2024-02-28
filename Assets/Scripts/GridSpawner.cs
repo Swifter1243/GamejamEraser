@@ -51,7 +51,7 @@ public class GridSpawner : MonoBehaviour
 
 	public void CheckDone()
 	{
-		bool allFlipped = buttons.Values.All(x => x.isOff);
+		bool allFlipped = buttons.Values.All(x => x.isOff && x.isReady);
 
 		if (allFlipped)
 		{
