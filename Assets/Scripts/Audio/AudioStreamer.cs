@@ -20,27 +20,27 @@ public class AudioStreamer : MonoBehaviour
 	AudioClip lastClip;
 
 	double dspEpsilon;
-	const float DSP_PRE = 0.1f;
+	double dspBufferLength;
 
 	public bool Play
 	{
 		set
 		{
-			isStopping = !value;
 			if (value)
 			{
 				if (!isPlaying) { StartCoroutine(PlayNext()); }
 			}
-		}
+            isPlaying = value;
+        }
 	}
 
 
-	private float TimeUntilStop
+	private double TimeUntilStop
 	{
 		get
 		{
-            return sources.Max<AudioSource, float>(
-				(src) => { return src != null && src.isPlaying ? (src.clip.length-src.time) : 0; }
+            return sources.Max<AudioSource, double>(
+				(src) => { return src != null && src.isPlaying ? ((double)src.clip.length-src.time) : 0; }
             );
         }
 	}
@@ -52,7 +52,10 @@ public class AudioStreamer : MonoBehaviour
 
 	void Start()
 	{
-		dspEpsilon = 1.0d/AudioSettings.outputSampleRate;
+		AudioSettings.GetDSPBufferSize(out int bufferLength, out int numBuffers);
+		dspBufferLength = (float)bufferLength / AudioSettings.outputSampleRate * 2;
+
+        dspEpsilon = 1.0d/AudioSettings.outputSampleRate;
 		Play= true;
 	}
 
@@ -90,12 +93,10 @@ public class AudioStreamer : MonoBehaviour
 		 */
 
 		//Get largest of two clip times
+		double nextClipIn = TimeUntilStop;
+
 		//Wait until right before over
-
-		float nextClipIn = TimeUntilStop;
-
-        yield return new WaitForSecondsRealtime(nextClipIn - DSP_PRE);
-
+        yield return new WaitForSeconds((float)(nextClipIn - dspBufferLength));
 		while (isPlaying)
 		{
             //Get next source
@@ -109,15 +110,17 @@ public class AudioStreamer : MonoBehaviour
 
 			//Schedule clip
 			nextClipIn = TimeUntilStop;
-            nextSource.PlayScheduled(nextClipIn + dspEpsilon);
+            nextSource.PlayScheduled(AudioSettings.dspTime + nextClipIn + dspEpsilon);
+			nextClipIn += nextClip.length;
+
+			//Store as last clip
+			lastClip = nextClip;
+			lastSource = nextSource;
 
             //Wait until right before next clip
-            yield return new WaitForSecondsRealtime(nextClipIn - DSP_PRE);
-
+            yield return new  WaitForSeconds((float)(nextClipIn - dspBufferLength));
         }
 
-
-        yield return new WaitForSecondsRealtime(DSP_PRE);
 
 		isPlaying = false;
 		yield return null;
