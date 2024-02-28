@@ -9,12 +9,17 @@ public class ResetHotkey : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.R))
         {
-            GameData.ResetGame();
+            GameData.ResetData();
 
             foreach (var upgrade in FindObjectsOfType<UpgradeUI>())
             {
                 upgrade.Upgrade.Level = 0;
             }
-        }
+
+			if (FindObjectOfType<GameStarter>() is { } obj)
+			{
+                obj.RemakeGrid();
+			}
+		}
     }
 }
