@@ -19,7 +19,7 @@ public static class GameData
     #if UNITY_EDITOR
 	[MenuItem("Assets/Reset Game Lol")]
     #endif
-	public static void ResetGame()
+	public static void ResetData()
 	{
         PlayerPrefs.DeleteAll();
 	}
@@ -39,6 +39,5 @@ public static class GameData
     public static void EraseBytes(int amount)
     {
         BytesRemaining -= amount;
-        Progress.Progress = BytesRemaining;
     }
 }

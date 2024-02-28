@@ -36,6 +36,12 @@ public class GameStarter : MonoBehaviour
         }
 	}
 
+    public void RemakeGrid()
+    {
+        Destroy(gridSpawner.gameObject);
+        MakeGrid();
+    }
+
 	public void MakeGrid()
     {
 		addressFormat.UpdateText();

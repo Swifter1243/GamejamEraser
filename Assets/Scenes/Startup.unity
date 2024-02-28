@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 405004201}
   - component: {fileID: 405004200}
-  - component: {fileID: 405004199}
   - component: {fileID: 405004203}
   m_Layer: 0
   m_Name: Camera
@@ -142,14 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &405004199
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405004198}
-  m_Enabled: 1
 --- !u!20 &405004200
 Camera:
   m_ObjectHideFlags: 0
@@ -240,7 +231,6 @@ GameObject:
   - component: {fileID: 430056302}
   - component: {fileID: 430056301}
   - component: {fileID: 430056300}
-  - component: {fileID: 430056299}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -248,23 +238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &430056299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430056297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 3
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &430056300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,22 +454,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   format: "ZerOS [Version 0.4.3100]\r\n\r\nCopyright (C) 1991-1993 Zero Inc.\r\n\r\nCurrent
-    date is {0} {1}-{2}-{3}\r\nCurrent time is {4}:{5}:{6}.{7}\r\n\r\nJ:\\>list\r\n\r\nList
+    date is Fri {0}-{1}-{2}\r\nCurrent time is {3}:{4}:{5}.{6}\r\n\r\nJ:\\>list\r\n\r\nList
     of files in J:\\\r\n\r\n    NAME       SIZE\r\n    --------   --------\r\n   
     README.TXT    32 kB\r\n    ZERO.BIN     843 kB\r\n\r\n\r\nJ:\\>ZERO.BIN /E\r\n\r\nZERO
-    [/E ] [/R] [/S] [/A] \r\n\r\n===============================================\t\r\n/A     
+    [/E ] [/R] [/S] [/A] \r\n\r\n===============================================\r\n/A     
     Enables automatic mode (EXPERIMENTAL!)\r\n/E      Enables extensions\r\n/R     
     Enables Read-only mode\r\n/S      Runs the program in silent mode\r\n/?     
-    Displays help and exits immediately\r\n===============================================\t\r\n\r\n\r\n\r\n$$$$$$$$\\
+    Displays help and exits immediately\r\n===============================================\r\n\r\n\r\n\r\n$$$$$$$$\\
     $$$$$$$$\\ $$$$$$$\\   $$$$$$\\  \r\n\\____$$  |$$  _____|$$  __$$\\ $$  __$$\\
     \r\n    $$  / $$ |      $$ |  $$ |$$ /  $$ |\r\n   $$  /  $$$$$\\    $$$$$$$ 
     |$$ |  $$ |\r\n  $$  /   $$  __|   $$  __$$< $$ |  $$ |\r\n $$  /    $$ |     
     $$ |  $$ |$$ |  $$ |\r\n$$$$$$$$\\ $$$$$$$$\\ $$ |  $$ | $$$$$$  |\r\n\\________|\\________|\\__| 
     \\__| \\______/\r\n                                        \r\n  I  n  c  o 
     r  p  o  r  a  t  e  d \r\n\r\n\r\n\r\n\r\nSearching for drives...\r\nFound 1
-    Drive(s)...\r\nMounting drives...\r\nDrives mounted:\r\n\tH:\r\n\r\nInitializing
+    Drive(s)...\r\nMounting drives...\r\nDrives mounted:\r\n    H:\r\n\r\nInitializing
     display..."
   text: {fileID: 902553181}
+  textWait: 5
+  textWait2: 5
+  textCharDelayMin: 0
+  textCharDelayMax: 0.04
+  textCharDelayThreshold: 0.038
+  textLineDelayMin: 0.02
+  textLineDelayMax: 0.08
+  isAutostart: 0
 --- !u!1 &1681136107
 GameObject:
   m_ObjectHideFlags: 0

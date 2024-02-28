@@ -57,6 +57,7 @@ MonoBehaviour:
   <Upgrade>k__BackingField: {fileID: 0}
   <Text>k__BackingField: {fileID: 8386480844177468414}
   <Button>k__BackingField: {fileID: 3255754969131404789}
+  <SellButton>k__BackingField: {fileID: 0}
   <ButtonText>k__BackingField: {fileID: 3327546381050159405}
   <CurrentText>k__BackingField: {fileID: 7566055200424350480}
 --- !u!222 &9204146426612782621
@@ -233,8 +234,20 @@ PrefabInstance:
       value: Upgrade Name
       objectReference: {fileID: 0}
     - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       propertyPath: m_overflowMode
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       propertyPath: m_TextStyleHashCode
@@ -560,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -96
+      value: -192
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -596,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -48
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -635,12 +648,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_fontSizeBase
       value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_overflowMode
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_TextStyleHashCode
@@ -656,7 +681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8228354164191813904, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_Name
-      value: UpgradeLevel
+      value: UpgradeCurrent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
