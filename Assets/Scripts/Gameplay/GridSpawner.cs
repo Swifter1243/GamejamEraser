@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GridSpawner : MonoBehaviour
 {
@@ -12,14 +14,26 @@ public class GridSpawner : MonoBehaviour
 
 	public IEnumerable<GridButton> GetAllButtonsOn() => buttons.SelectMany(b => b).Where(x => !x.isOff);
 
-	public bool TurnRandomButtonOff()
+	public int TurnRandomButtonsOff(int count)
 	{
-		var list = GetAllButtonsOn();
+		GridButton[] buttonsOn = GetAllButtonsOn().ToArray();
 
-		if (list.Count() == 0) return false;
+        if (buttonsOn.Length <= count)
+        {
+            foreach (GridButton button in buttonsOn)
+            {
+                button.TurnOff();
+            }
 
-		int index = Random.Range(0, list.Count());
-		return list.ToList()[index].TurnOff();
+            return buttonsOn.Length;
+        }
+
+        foreach (GridButton button in buttonsOn.OrderBy(_ => Random.Range(0, int.MaxValue)).Take(count))
+        {
+            button.TurnOff();
+        }
+
+        return count;
 	}
 
 	public void PopulateGrid(int grid)

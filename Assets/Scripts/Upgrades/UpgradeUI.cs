@@ -53,7 +53,7 @@ namespace Upgrades
 
         private void UpdateAvailability()
         {
-            Button.interactable = GetAvailable();
+            //Button.interactable = GetAvailable();
 
 			var color = GetAvailable() ? Color.white : Color.white * 0.5f;
 
