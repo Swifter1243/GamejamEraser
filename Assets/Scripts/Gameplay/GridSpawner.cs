@@ -8,9 +8,9 @@ public class GridSpawner : MonoBehaviour
 	public GameObject gridObject;
 	public GameStarter gameStarter;
 
-	public Dictionary<Vector2Int, GridButton> buttons = new Dictionary<Vector2Int, GridButton>();
+	public GridButton[][] buttons;
 
-	public IEnumerable<GridButton> GetAllButtonsOn() => buttons.Values.Where(x => !x.isOff);
+	public IEnumerable<GridButton> GetAllButtonsOn() => buttons.SelectMany(b => b).Where(x => !x.isOff);
 
 	public bool TurnRandomButtonOff()
 	{
@@ -24,15 +24,19 @@ public class GridSpawner : MonoBehaviour
 
 	public void PopulateGrid(int grid)
 	{
-		for (int y = 0; y < grid; y++)
-		{
-			for (int x = 0; x < grid; x++)
+		buttons = new GridButton[grid][];
+
+		for (int x = 0; x < grid; x++)
+        {
+            buttons[x] = new GridButton[grid];
+
+			for (int y = 0; y < grid; y++)
 			{
 				var obj = Instantiate(gridObject, transform);
 				obj.transform.localPosition = new Vector2(x, y);
 
 				var button = obj.GetComponent<GridButton>();
-				buttons[new Vector2Int(x, y)] = button;
+				buttons[x][y] = button;
 				button.gridSpawner = this;
 				button.x = x;
 				button.y = y;
@@ -50,7 +54,7 @@ public class GridSpawner : MonoBehaviour
 
 	public void CheckDone()
 	{
-		bool allFlipped = buttons.Values.All(x => x.isOff && x.isReady);
+		bool allFlipped = buttons.SelectMany(b => b).All(x => x.isOff && x.isReady);
 
 		if (allFlipped)
 		{

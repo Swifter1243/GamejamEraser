@@ -15,33 +15,32 @@ public class ProgressFormat : MonoBehaviour
 	const char PROGRESS_CHAR_FULL = '█';
     readonly char[] progressChars = { '░', '▒', '▓'}; //See: Fence post problem
 
-    public int Progress
-	{
-		set 
-		{
-			//Get the fractional value 
-			float frac = (float)value / int.MaxValue;
-            float segmentFrac = frac * PROGRESS_CHAR_LEN;
-			char[] chars = new char[PROGRESS_CHAR_LEN];
-			for (int i = 0; i < PROGRESS_CHAR_LEN; i++)
-			{
-				float curFrac = segmentFrac - i;
+    public int Progress;
 
-                if (curFrac >= 1) //Solid
-				{
-					chars[i] = PROGRESS_CHAR_FULL;
-				}
-				else if (curFrac > 0) //In-progress
-				{
-					chars[i] = progressChars[Mathf.FloorToInt(curFrac * progressChars.Length)];
-				}
-				else //Blank
-				{
-					chars[i] = PROGRESS_CHAR_EPTY;
-				}
-			}
+    private void Update()
+    {
+        //Get the fractional value 
+        float frac = (float)Progress / int.MaxValue;
+        float segmentFrac = frac * PROGRESS_CHAR_LEN;
+        char[] chars = new char[PROGRESS_CHAR_LEN];
+        for (int i = 0; i < PROGRESS_CHAR_LEN; i++)
+        {
+            float curFrac = segmentFrac - i;
 
-			text.text = string.Format(formatString, new string(chars), frac);
-		}
-	}
+            if (curFrac >= 1) //Solid
+            {
+                chars[i] = PROGRESS_CHAR_FULL;
+            }
+            else if (curFrac > 0) //In-progress
+            {
+                chars[i] = progressChars[Mathf.FloorToInt(curFrac * progressChars.Length)];
+            }
+            else //Blank
+            {
+                chars[i] = PROGRESS_CHAR_EPTY;
+            }
+        }
+
+        text.text = string.Format(formatString, new string(chars), frac);
+    }
 }
