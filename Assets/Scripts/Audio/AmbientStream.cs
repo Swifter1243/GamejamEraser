@@ -35,8 +35,8 @@ public class AmbientStream : MonoBehaviour
 	private float intensitySpread;
 	[Range(0,1)]
 	public float debugIntensity;
-	private const float INTENSITY_SCALE = 3 / 20;
-	private const float INTENSITY_LOGSCALE = 1 / 7;
+	private const float INTENSITY_SCALE = 3.0f / 20;
+	private const float INTENSITY_LOGSCALE = 1.0f / 7;
 
 
     public void AmbientStart()
@@ -118,7 +118,7 @@ public class AmbientStream : MonoBehaviour
 			if(state== AmbientState.Ending) { state = AmbientState.Off; }
 
             //Wait until right before next clip
-            yield return new WaitForSeconds((float)(nextClipIn - AudioStatics.dspBufferLength));
+            yield return new WaitForSeconds((float)(nextClipIn - AudioStatics.dspPre));
 		}
 
 		yield return null;

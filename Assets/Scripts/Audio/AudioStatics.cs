@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioStatics : MonoBehaviour
 {
 	static private AudioStatics instance;
+	static public double dspPre; 
 	static public double dspBufferLength; 
 	static public double dspEpsilon; 
 
@@ -25,6 +26,7 @@ public class AudioStatics : MonoBehaviour
 		instance = this;
 
         AudioSettings.GetDSPBufferSize(out int bufferLength, out int numBuffers);
+		dspPre = 0.1f;
         dspBufferLength = (float)bufferLength / AudioSettings.outputSampleRate * 2;
         dspEpsilon = 1.0d / AudioSettings.outputSampleRate;
     }
