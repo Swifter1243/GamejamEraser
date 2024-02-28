@@ -10,6 +10,9 @@ namespace Inspector
         [field: SerializeField]
         private TextMeshProUGUI Text { get; set; }
 
+        [field: SerializeField]
+        public float ClearDelay { get; private set; }
+
         public void SetText(string text)
         {
             Text.text = text;
@@ -23,7 +26,7 @@ namespace Inspector
 
         private IEnumerator ClearCoroutine()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(ClearDelay);
             Text.text = "";
         }
     }
