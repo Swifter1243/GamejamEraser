@@ -999,7 +999,6 @@ MonoBehaviour:
 
     [{0}] {1,6:P1}'
   text: {fileID: 452131928}
-  Progress: 0
 --- !u!114 &452131928 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3727542866899280517, guid: 7c5da08aaedcf1e4ab2af05ac06cae20, type: 3}
@@ -1604,8 +1603,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_HandleRect: {fileID: 969745902}
   m_Direction: 2
-  m_Value: 0.5000002
-  m_Size: 0.45
+  m_Value: 1
+  m_Size: 0.44999996
   m_NumberOfSteps: 6
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2106,7 +2105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -8.5, y: -0.000061035156}
+  m_AnchoredPosition: {x: -8.5, y: -352}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378350257
