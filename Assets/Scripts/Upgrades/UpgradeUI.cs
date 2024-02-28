@@ -16,6 +16,9 @@ namespace Upgrades
         public Button Button { get; private set; }
 
         [field: SerializeField]
+        public Button SellButton { get; private set; }
+
+        [field: SerializeField]
         public TextMeshProUGUI ButtonText { get; private set; }
 
         [field: SerializeField]
