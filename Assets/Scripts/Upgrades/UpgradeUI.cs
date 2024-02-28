@@ -18,7 +18,10 @@ namespace Upgrades
         [field: SerializeField]
         public TextMeshProUGUI ButtonText { get; private set; }
 
-        private void Start()
+		[field: SerializeField]
+		public TextMeshProUGUI CurrentText { get; private set; }
+
+		private void Start()
         {
             Text.text = Upgrade.Name;
 
@@ -37,24 +40,43 @@ namespace Upgrades
         private void Refresh()
         {
             UpdateButtonText();
+            UpdateAvailability();
+		}
+
+		private bool GetAvailable()
+        {
+            return !Upgrade.IsMaxLevel && GameData.Currency >= Upgrade.NextCost;
+		}
+
+        private void UpdateAvailability()
+        {
 #if !UNITY_EDITOR
-            Button.interactable = !Upgrade.IsMaxLevel && GameData.Currency >= Upgrade.NextCost;
+            Button.interactable = GetAvailable();
 #endif
-        }
+
+			var color = GetAvailable() ? Color.white : Color.white * 0.5f;
+
+            Text.color = color;
+            Button.GetComponent<TextMeshProUGUI>().color = color;
+            ButtonText.color = color;
+            CurrentText.color = color;
+		}
 
         private void UpdateButtonText()
         {
-            string line1 = $"({Upgrade.Level}/{Upgrade.MaxLevel})";
-            string line2 = $"Current: {Upgrade.CurrentName}";
-            
-            if (!Upgrade.IsMaxLevel)
+            CurrentText.text = Upgrade.CurrentName;
+
+            string progress = $"({Upgrade.Level}/{Upgrade.MaxLevel})";
+
+			if (!Upgrade.IsMaxLevel)
             {
-                string line3 = $"Next: {Upgrade.NextName}";
-                ButtonText.text = $"{line1}\n{line2}\n{line3}";
-            }
+                ButtonText.text = $"next: {Upgrade.NextName}\n" +
+                    $"cost: {Upgrade.NextCost}b\n" +
+                    progress;
+			}
             else
             {
-                ButtonText.text = $"{line1}\n{line2}\n.";
+                ButtonText.text = $"\n\n{progress}";
             }
         }
     }
