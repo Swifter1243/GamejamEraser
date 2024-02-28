@@ -10,6 +10,7 @@ public class Eraser : MonoBehaviour
     public Camera Camera { get; private set; }
 
     private GameStarter GameStarter;
+    private Vector2Int? LastClickPos;
 
     private void Start()
     {
@@ -20,16 +21,33 @@ public class Eraser : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            Erase();
+            Vector2 mousePos = Camera.ScreenToWorldPoint(Input.mousePosition) + Vector3.one / 2f;
+            Vector2Int floored = new(Mathf.FloorToInt(mousePos.x), Mathf.FloorToInt(mousePos.y));
+
+            EraseAt(floored);
+
+            if (LastClickPos is { } lastPos)
+            {
+                float d = (int) Vector2Int.Distance(floored, lastPos);
+
+                for (int i = 0; i < d; i++)
+                {
+                    Vector2 pos = Vector2.Lerp(lastPos, floored, i / d);
+                    EraseAt(new Vector2Int((int) pos.x, (int) pos.y));
+                }
+            }
+
+            LastClickPos = floored;
+        }
+        else
+        {
+            LastClickPos = null;
         }
     }
 
-    private void Erase()
+    private void EraseAt(Vector2Int position)
     {
-        Vector2 mousePos = Camera.ScreenToWorldPoint(Input.mousePosition) + Vector3.one / 2f;
-        Vector2Int floored = new(Mathf.FloorToInt(mousePos.x), Mathf.FloorToInt(mousePos.y));
-
-        foreach (Vector2Int pos in Helpers.GetCircle(floored, CursorSize.CurrentValue))
+        foreach (Vector2Int pos in Helpers.GetCircle(position, CursorSize.CurrentValue))
         {
             if (GameStarter.gridSpawner.buttons.TryGetValue(pos, out GridButton button))
             {
