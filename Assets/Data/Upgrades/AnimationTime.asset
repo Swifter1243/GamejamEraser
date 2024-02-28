@@ -23,4 +23,7 @@ MonoBehaviour:
     <Cost>k__BackingField: 500
   - <Name>k__BackingField: 0.5s
     <Value>k__BackingField: 0.5
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 25000
+  - <Name>k__BackingField: 0.25s
+    <Value>k__BackingField: 0.25
+    <Cost>k__BackingField: 4000000
