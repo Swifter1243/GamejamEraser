@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Upgrades;
 
-public class ResetHotkey : MonoBehaviour
+public class HotkeyManager : MonoBehaviour
 {
     void Update()
     {
