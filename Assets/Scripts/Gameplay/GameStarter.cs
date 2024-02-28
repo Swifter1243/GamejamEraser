@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Upgrades;
 
@@ -49,7 +50,7 @@ public class GameStarter : MonoBehaviour
     {
         yield return new WaitForSeconds(AnimationTimeUpgrade.CurrentValue);
 
-        foreach (var item in gridSpawner.buttons.Values)
+        foreach (var item in gridSpawner.buttons.SelectMany(b => b))
         {
             item.MakeReady();
         }

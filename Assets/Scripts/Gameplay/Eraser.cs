@@ -51,10 +51,14 @@ public class Eraser : MonoBehaviour
     {
         foreach (Vector2Int pos in Helpers.GetCircle(position, CursorSize.CurrentValue))
         {
-            if (GameStarter.gridSpawner.buttons.TryGetValue(pos, out GridButton button))
+            GridButton[][] buttons = GameStarter.gridSpawner.buttons;
+
+            Vector2Int size = new(buttons.Length, buttons[0].Length);
+
+            if (pos is { x: >= 0, y: >= 0 } && pos.x < size.x && pos.y < size.y)
             {
-				if (button.TurnOff()) StatsFormat.bytesErasedThisSecond += CellValue.CurrentValue;
-			}
+                if (buttons[pos.x][pos.y].TurnOff()) StatsFormat.bytesErasedThisSecond += CellValue.CurrentValue;
+            }
         }
     }
 }
