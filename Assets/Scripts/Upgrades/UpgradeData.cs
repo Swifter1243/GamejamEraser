@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Upgrades
@@ -10,6 +11,7 @@ namespace Upgrades
         public override int NextCost => NextUpgrade.Cost;
         public override bool IsMaxLevel => Level == MaxLevel;
         public override int MaxLevel => Upgrades.Length - 1;
+        public override int Spent => Upgrades.Skip(1).Take(Level).Sum(level => level.Cost);
         public T CurrentValue => Upgrades[Level].Value;
 
         public override int Level
@@ -53,5 +55,6 @@ namespace Upgrades
         public abstract int Level { get; set; }
         public abstract int MaxLevel { get; }
         public abstract bool IsMaxLevel { get; }
+        public abstract int Spent { get; }
     }
 }
