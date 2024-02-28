@@ -1433,9 +1433,9 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_HandleRect: {fileID: 969745902}
   m_Direction: 2
-  m_Value: 0.5000002
+  m_Value: 0.5
   m_Size: 0.625
-  m_NumberOfSteps: 10
+  m_NumberOfSteps: 6
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1829,7 +1829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -8.5, y: -21.333374}
+  m_AnchoredPosition: {x: -8.5, y: 38.400024}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378350257
@@ -2258,7 +2258,7 @@ MonoBehaviour:
   rateText: {fileID: 1810156997}
   autoRateText: {fileID: 1046573846}
   userRateText: {fileID: 378362051}
-  currencyText: {fileID: 0}
+  currencyText: {fileID: 2093696703}
 --- !u!1001 &1687722746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2994,6 +2994,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
   m_PrefabInstance: {fileID: 2093696701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2093696703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
+  m_PrefabInstance: {fileID: 2093696701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2094012047 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1749656446673760776, guid: 09a752c7d6544e64b8833e435db1559e, type: 3}
