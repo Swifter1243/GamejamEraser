@@ -70,8 +70,8 @@ namespace Upgrades
 
 			if (!Upgrade.IsMaxLevel)
             {
-                ButtonText.text = $"next: {Upgrade.NextName}\n" +
-                    $"cost: {Upgrade.NextCost}b\n" +
+                ButtonText.text = $"Next: {Upgrade.NextName}\n" +
+                    $"Cost: {Upgrade.NextCost}b\n" +
                     progress;
 			}
             else
