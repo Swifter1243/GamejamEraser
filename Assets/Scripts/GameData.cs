@@ -1,6 +1,7 @@
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Upgrades;
 
 public static class GameData
@@ -39,5 +40,10 @@ public static class GameData
     public static void EraseBytes(int amount)
     {
         BytesRemaining -= amount;
+
+        if (BytesRemaining <= 0)
+        {
+            SceneManager.LoadScene("Credits");
+		}
     }
 }
