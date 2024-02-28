@@ -103,3 +103,5 @@ MonoBehaviour:
   cellValue: {fileID: 11400000, guid: ec56cffe35935f24a8f710b15656dc7d, type: 2}
   cursorRadius: {fileID: 11400000, guid: e3d2be004774b454ebcb5519d1e3efb1, type: 2}
   isOff: 0
+  isReady: 0
+  <AnimationTimeUpgrade>k__BackingField: {fileID: 11400000, guid: 15e03406dd86a2b4d9c4a393c21c9aeb, type: 2}

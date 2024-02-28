@@ -20,6 +20,9 @@ public class GridButton : MonoBehaviour
 	public bool isOff;
 	public bool isReady = false;
 
+	[field: SerializeField]
+	public FloatUpgradeData AnimationTimeUpgrade { get; private set; }
+
 	private void Awake()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
@@ -53,7 +56,7 @@ public class GridButton : MonoBehaviour
 			animationTime += Time.deltaTime;
 			waitTime += Time.deltaTime;
 
-			float percentage = animationTime / GameStarter.ANIMATION_TIME;
+			float percentage = animationTime / AnimationTimeUpgrade.CurrentValue;
 			spriteRenderer.color = Color.Lerp(currentRandomColor, animationStateColor, percentage);
 
 			if (waitTime > waitTimeMax)

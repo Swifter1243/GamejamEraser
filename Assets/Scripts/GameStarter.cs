@@ -12,11 +12,12 @@ public class GameStarter : MonoBehaviour
     public GridSpawner gridSpawner;
     public CameraScaler cameraScaler;
 
-    public AddressFormat addressFormat;
+	public AddressFormat addressFormat;
 
-    public static float ANIMATION_TIME = 1;
+	[field: SerializeField]
+	public FloatUpgradeData AnimationTimeUpgrade { get; private set; }
 
-    void Awake()
+	void Awake()
     {
         MakeGrid();
     }
@@ -46,7 +47,7 @@ public class GameStarter : MonoBehaviour
 
     IEnumerator MakeGridReady()
     {
-        yield return new WaitForSeconds(ANIMATION_TIME);
+        yield return new WaitForSeconds(AnimationTimeUpgrade.CurrentValue);
 
         foreach (var item in gridSpawner.buttons.Values)
         {
