@@ -797,6 +797,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1349285929075261841, guid: 4d210030f935fa143878996cc50fd914, type: 3}
+      propertyPath: <ClearDelay>k__BackingField
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4967059901692028073, guid: 4d210030f935fa143878996cc50fd914, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

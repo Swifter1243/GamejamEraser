@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed8a66d26413824993e69462ff9e941, type: 3}
   m_Name: GridSize
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Grid Size
+  <Name>k__BackingField: Buffer Size
   <Description>k__BackingField: The size of the cell grid.
   <Key>k__BackingField: grid_size
   <Upgrades>k__BackingField:

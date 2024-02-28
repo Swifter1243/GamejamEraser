@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43258cd3801e6f4db6a4e36a3f9855f, type: 3}
   m_Name: IdleRate
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Idle Rate
+  <Name>k__BackingField: Multithread
   <Description>k__BackingField: How many cells will be automatically erased per second.
   <Key>k__BackingField: idle_rate
   <Upgrades>k__BackingField:
@@ -21,7 +21,7 @@ MonoBehaviour:
     <Cost>k__BackingField: 0
   - <Name>k__BackingField: 2/s
     <Value>k__BackingField: 2
-    <Cost>k__BackingField: 250
+    <Cost>k__BackingField: 200
   - <Name>k__BackingField: 4/s
     <Value>k__BackingField: 4
     <Cost>k__BackingField: 500

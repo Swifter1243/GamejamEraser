@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8cdc46ba8fcb342899c9c5cf19e1e4, type: 3}
   m_Name: CursorRadius
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Cursor Shape
+  <Name>k__BackingField: Stride
   <Description>k__BackingField: The shape of the cursor while manually erasing data.
   <Key>k__BackingField: cursor_radius
   <Upgrades>k__BackingField:
