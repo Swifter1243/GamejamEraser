@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AnimationTime
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Register Delay
+  <Description>k__BackingField: The delay between registers after fully erasing one.
   <Key>k__BackingField: animation_time
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: 2s

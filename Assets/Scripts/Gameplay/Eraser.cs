@@ -57,7 +57,7 @@ public class Eraser : MonoBehaviour
 
             if (pos is { x: >= 0, y: >= 0 } && pos.x < size.x && pos.y < size.y)
             {
-                if (buttons[pos.x][pos.y].TurnOff()) StatsFormat.bytesErasedThisSecond += CellValue.CurrentValue;
+                buttons[pos.x][pos.y].TurnOff();
             }
         }
     }
