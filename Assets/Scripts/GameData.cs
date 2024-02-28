@@ -39,6 +39,5 @@ public static class GameData
     public static void EraseBytes(int amount)
     {
         BytesRemaining -= amount;
-        Progress.Progress = BytesRemaining;
     }
 }

@@ -15,12 +15,10 @@ public class ProgressFormat : MonoBehaviour
 	const char PROGRESS_CHAR_FULL = '█';
     readonly char[] progressChars = { '░', '▒', '▓'}; //See: Fence post problem
 
-    public int Progress;
-
     private void Update()
     {
         //Get the fractional value 
-        float frac = (float)Progress / int.MaxValue;
+        float frac = (float)GameData.BytesRemaining / int.MaxValue;
         float segmentFrac = frac * PROGRESS_CHAR_LEN;
         char[] chars = new char[PROGRESS_CHAR_LEN];
         for (int i = 0; i < PROGRESS_CHAR_LEN; i++)
