@@ -70,10 +70,6 @@ public class GridSpawner : MonoBehaviour
 	{
 		bool allFlipped = buttons.SelectMany(b => b).All(x => x.isOff && x.isReady);
 
-		if (allFlipped)
-		{
-			Destroy(gameObject);
-			gameStarter.MakeGrid();
-		}
+		if (allFlipped) gameStarter.RemakeGrid();
 	}
 }

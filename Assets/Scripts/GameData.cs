@@ -19,7 +19,7 @@ public static class GameData
     #if UNITY_EDITOR
 	[MenuItem("Assets/Reset Game Lol")]
     #endif
-	public static void ResetGame()
+	public static void ResetData()
 	{
         PlayerPrefs.DeleteAll();
 	}
