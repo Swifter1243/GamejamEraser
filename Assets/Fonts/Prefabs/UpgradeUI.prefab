@@ -57,6 +57,7 @@ MonoBehaviour:
   <Upgrade>k__BackingField: {fileID: 0}
   <Text>k__BackingField: {fileID: 8386480844177468414}
   <Button>k__BackingField: {fileID: 3255754969131404789}
+  <SellButton>k__BackingField: {fileID: 0}
   <ButtonText>k__BackingField: {fileID: 3327546381050159405}
   <CurrentText>k__BackingField: {fileID: 7566055200424350480}
 --- !u!222 &9204146426612782621
@@ -233,8 +234,20 @@ PrefabInstance:
       value: Upgrade Name
       objectReference: {fileID: 0}
     - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       propertyPath: m_overflowMode
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4762379178009175005, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       propertyPath: m_TextStyleHashCode
