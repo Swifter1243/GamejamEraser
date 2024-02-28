@@ -50,14 +50,30 @@ public static class Helpers
 
     public static string FormatBytes(int bytes)
     {
+        string result = "";
+
+        if (bytes < 0)
+        {
+            bytes *= -1;
+            result += "-";
+        }
+
         int unit = 0;
+        int lastBytes = 0;
 
         while (bytes >= 1000)
         {
+            lastBytes = bytes;
 			bytes /= 1000;
             unit++;
         }
 
-        return $"{bytes} {byteUnits[unit]}";
+        result += $"{bytes}";
+
+        if (lastBytes != 0) result += "." + lastBytes.ToString().Substring(0, 1);
+
+        result += $" {byteUnits[unit]}";
+
+		return result;
     }
 }
