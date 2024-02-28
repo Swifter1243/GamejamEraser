@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Upgrades
 {
-    public class UpgradeData<T> : UpgradeData
+    public class UpgradeData<T> : UpgradeData where T : struct
     {
         public override string CurrentName => Upgrades[Level].Name;
         public override string NextName => NextUpgrade.Name;
@@ -12,12 +12,18 @@ namespace Upgrades
         public override bool IsMaxLevel => Level == MaxLevel;
         public override int MaxLevel => Upgrades.Length - 1;
         public override int Spent => Upgrades.Skip(1).Take(Level).Sum(level => level.Cost);
-        public T CurrentValue => Upgrades[Level].Value;
+        public T CurrentValue => _currentValue ??= Upgrades[Level].Value;
+        private T? _currentValue = null;
 
         public override int Level
         {
             get => PlayerPrefs.GetInt(Key, 0);
-            set => PlayerPrefs.SetInt(Key, Helpers.AssertRange(value, 0, Upgrades.Length - 1, 0));
+            set
+            {
+                int newLevel = Helpers.AssertRange(value, 0, Upgrades.Length - 1, 0);
+                PlayerPrefs.SetInt(Key, newLevel);
+                _currentValue = Upgrades[newLevel].Value;
+            }
         }
 
         private Upgrade NextUpgrade => Upgrades[Helpers.AssertRange(Level + 1, 0, MaxLevel, MaxLevel)];
