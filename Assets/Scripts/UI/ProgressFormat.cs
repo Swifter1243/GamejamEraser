@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Schema;
-using TMPro;
-using UnityEditor.SceneManagement;
+﻿using TMPro;
 using UnityEngine;
 
 public class ProgressFormat : MonoBehaviour
@@ -12,13 +7,13 @@ public class ProgressFormat : MonoBehaviour
 	[TextArea]
 	public string formatString;
 
-	const int PROGRESS_CHAR_LEN = 48;
+    [SerializeField]
+    private TMP_Text text;
 
+    const int PROGRESS_CHAR_LEN = 48;
 	const char PROGRESS_CHAR_EPTY = ' ';
 	const char PROGRESS_CHAR_FULL = '█';
-
     readonly char[] progressChars = { '░', '▒', '▓'}; //See: Fence post problem
-
 
     public int Progress
 	{
@@ -47,16 +42,6 @@ public class ProgressFormat : MonoBehaviour
 			}
 
 			text.text = string.Format(formatString, new string(chars), frac);
-			//text.text = string.Format(formatString, chars, value, int.MaxValue);
 		}
-	}
-
-	[SerializeField]
-	private int myVar;
-	private TMP_Text text;
-
-	void Start()
-	{
-		text = GetComponent<TMP_Text>();   
 	}
 }

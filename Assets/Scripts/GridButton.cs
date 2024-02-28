@@ -23,7 +23,7 @@ public class GridButton : MonoBehaviour
 	private void Awake()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
-		waitTimeMax = Random.RandomRange(0.05f, 0.1f) * 0.3f;
+		waitTimeMax = Random.Range(0.05f, 0.1f) * 0.3f;
 		isOff = Random.Range(0, 4) == 0;
 		animationStateColor = StateColor();
 	}
