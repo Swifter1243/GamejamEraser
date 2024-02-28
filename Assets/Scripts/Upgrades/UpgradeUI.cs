@@ -24,7 +24,14 @@ namespace Upgrades
         [field: SerializeField]
         public TextMeshProUGUI CurrentText { get; private set; }
 
-        private void Start()
+        public RectTransform rt;
+
+		private void Awake()
+		{
+			rt = GetComponent<RectTransform>();
+		}
+
+		private void Start()
         {
             Text.text = Upgrade.Name;
 
@@ -46,7 +53,7 @@ namespace Upgrades
             UpdateAvailability();
 		}
 
-		private bool GetAvailable()
+		public bool GetAvailable()
         {
             return !Upgrade.IsMaxLevel && GameData.Currency >= Upgrade.NextCost;
 		}
