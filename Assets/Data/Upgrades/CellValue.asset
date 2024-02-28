@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CellValue
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Cell Value
+  <Description>k__BackingField: How much data is contained within one cell.
   <Key>k__BackingField: cell_value
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: 1 B

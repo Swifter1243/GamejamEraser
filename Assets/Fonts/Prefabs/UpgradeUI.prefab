@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1749656446673760776}
   - component: {fileID: 7022043318142788363}
   - component: {fileID: 9204146426612782621}
+  - component: {fileID: 1026350749163218405}
   m_Layer: 5
   m_Name: UpgradeUI
   m_TagString: Untagged
@@ -60,6 +61,7 @@ MonoBehaviour:
   <SellButton>k__BackingField: {fileID: 0}
   <ButtonText>k__BackingField: {fileID: 3327546381050159405}
   <CurrentText>k__BackingField: {fileID: 7566055200424350480}
+  rt: {fileID: 0}
 --- !u!222 &9204146426612782621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -68,6 +70,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115065319432688511}
   m_CullTransparentMesh: 1
+--- !u!114 &1026350749163218405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115065319432688511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6def7ed1814e80e48b73b438213ffaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  <UI>k__BackingField: {fileID: 7022043318142788363}
 --- !u!1001 &2141260250968514537
 PrefabInstance:
   m_ObjectHideFlags: 0

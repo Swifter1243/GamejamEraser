@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IdleRate
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Idle Rate
+  <Description>k__BackingField: How many cells will be automatically erased per second.
   <Key>k__BackingField: idle_rate
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: 0/s

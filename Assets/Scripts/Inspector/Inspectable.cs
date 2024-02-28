@@ -1,22 +1,23 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Inspector
 {
-    public class Inspectable : Graphic, IPointerEnterHandler, IPointerExitHandler
+    [RequireComponent(typeof(CanvasRenderer))]
+    public abstract class Inspectable : Graphic, IPointerEnterHandler, IPointerExitHandler
     {
-        [field: SerializeField, TextArea]
-        public string Text { get; private set; }
+        public abstract string Text { get; }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            FindObjectOfType<Inspector>().Text.text = Text;
+            FindObjectOfType<Inspector>().SetText(Text);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            FindObjectOfType<Inspector>().Text.text = "";
+            FindObjectOfType<Inspector>().Clear();
         }
     }
 }

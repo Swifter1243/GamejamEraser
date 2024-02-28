@@ -31,6 +31,9 @@ namespace Upgrades
         [field: SerializeField]
         public override string Name { get; protected set; }
 
+        [field: SerializeField] 
+        public override string Description { get; protected set; }
+
         [field: SerializeField]
         public override string Key { get; protected set; }
 
@@ -53,6 +56,7 @@ namespace Upgrades
 
     public abstract class UpgradeData : ScriptableObject
     {
+        public abstract string Description { get; protected set; }
         public abstract string Name { get; protected set; }
         public abstract string Key { get; protected set; }
         public abstract string CurrentName { get; }

@@ -8,6 +8,23 @@ namespace Inspector
     public class Inspector : MonoBehaviour
     {
         [field: SerializeField]
-        public TextMeshProUGUI Text { get; private set; }
+        private TextMeshProUGUI Text { get; set; }
+
+        public void SetText(string text)
+        {
+            Text.text = text;
+            StopCoroutine(nameof(ClearCoroutine));
+        }
+
+        public void Clear()
+        {
+            StartCoroutine(nameof(ClearCoroutine));
+        }
+
+        private IEnumerator ClearCoroutine()
+        {
+            yield return new WaitForSeconds(1f);
+            Text.text = "";
+        }
     }
 }

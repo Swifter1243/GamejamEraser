@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CursorRadius
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Cursor Shape
+  <Description>k__BackingField: The shape of the cursor while manually erasing data.
   <Key>k__BackingField: cursor_radius
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: Square
