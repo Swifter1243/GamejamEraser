@@ -18,10 +18,10 @@ namespace Upgrades
         [field: SerializeField]
         public TextMeshProUGUI ButtonText { get; private set; }
 
-		[field: SerializeField]
-		public TextMeshProUGUI CurrentText { get; private set; }
+        [field: SerializeField]
+        public TextMeshProUGUI CurrentText { get; private set; }
 
-		private void Start()
+        private void Start()
         {
             Text.text = Upgrade.Name;
 
