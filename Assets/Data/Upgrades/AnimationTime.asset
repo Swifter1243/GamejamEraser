@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8cdc46ba8fcb342899c9c5cf19e1e4, type: 3}
   m_Name: AnimationTime
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Register Delay
-  <Description>k__BackingField: The delay between registers after fully erasing one.
+  <Name>k__BackingField: RPM Overclock
+  <Description>k__BackingField: The delay between addresses after fully erasing one.
   <Key>k__BackingField: animation_time
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: 2s
