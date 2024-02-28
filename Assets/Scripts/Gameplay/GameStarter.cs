@@ -31,8 +31,7 @@ public class GameStarter : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.5f);
-            int n = gridSpawner.TurnRandomButtonsOff(idleRate.CurrentValue / 2);
-            StatsFormat.bytesAutomatedThisSecond += CellValue.CurrentValue * n;
+            gridSpawner.TurnRandomButtonsOff(idleRate.CurrentValue / 2);
         }
 	}
 
