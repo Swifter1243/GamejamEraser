@@ -59,18 +59,21 @@ public static class Helpers
         }
 
         int unit = 0;
-        int lastBytes = 0;
+        float lastBytes = 0;
 
         while (bytes >= 1000)
         {
-            lastBytes = bytes;
+            lastBytes = (bytes / 1000f) % 1;
 			bytes /= 1000;
             unit++;
         }
 
         result += $"{bytes}";
 
-        if (lastBytes != 0) result += "." + lastBytes.ToString().Substring(0, 1);
+        lastBytes = Mathf.Round(lastBytes * 100) / 100;
+        string decimals = lastBytes.ToString();
+
+		if (lastBytes != 0) result += decimals.Substring(1, Mathf.Min(3, decimals.Length - 1));
 
         result += $" {byteUnits[unit]}";
 
