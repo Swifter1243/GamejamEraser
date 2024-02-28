@@ -12,6 +12,8 @@ public class GameStarter : MonoBehaviour
     public GridSpawner gridSpawner;
     public CameraScaler cameraScaler;
 
+    public AddressFormat addressFormat;
+
     public static float ANIMATION_TIME = 1;
 
     void Awake()
@@ -33,7 +35,8 @@ public class GameStarter : MonoBehaviour
 
 	public void MakeGrid()
     {
-        cameraScaler.FixCamera();
+		addressFormat.UpdateText();
+		cameraScaler.FixCamera();
         var obj = Instantiate(grid);
         gridSpawner = obj.GetComponent<GridSpawner>();
 		gridSpawner.PopulateGrid(gridSize.CurrentValue.x);

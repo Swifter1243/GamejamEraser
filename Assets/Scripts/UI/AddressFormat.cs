@@ -5,12 +5,10 @@ public class AddressFormat : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text addressText;
-    [Header("Updated when next grid, string requires one integer.")]
-    [TextArea]
-    public string formatString;
-
-    public int Address
+   
+    public void UpdateText()
     {
-        set { addressText.text = string.Format(formatString, value); }
+        string hex = GameData.FreedBytes.ToString("X").PadLeft(8, '0');
+        addressText.text = $"0x{hex}";
     }
 }

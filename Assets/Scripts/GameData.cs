@@ -32,6 +32,8 @@ public static class GameData
 
     public static int Currency => int.MaxValue - BytesRemaining - TotalSpent;
 
+    public static int FreedBytes => int.MaxValue - BytesRemaining;
+
     public static void EraseBytes(int amount)
     {
         BytesRemaining -= amount;
