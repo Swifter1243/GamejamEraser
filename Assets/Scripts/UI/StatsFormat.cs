@@ -19,6 +19,7 @@ public class StatsFormat : MonoBehaviour
     private TMP_Text userRateText;
 
     public static int bytesErasedThisSecond = 0;
+    public static int bytesAutomatedThisSecond = 0;
 
     public int Rate
     {
@@ -47,9 +48,11 @@ public class StatsFormat : MonoBehaviour
         {
             Rate = lastBytes - GameData.BytesRemaining;
             UserRate = bytesErasedThisSecond;
+            AutoRate = bytesAutomatedThisSecond;
 
 			lastBytes = GameData.BytesRemaining;
             bytesErasedThisSecond = 0;
+            bytesAutomatedThisSecond = 0;
             yield return new WaitForSeconds(1f);
         }
     }
