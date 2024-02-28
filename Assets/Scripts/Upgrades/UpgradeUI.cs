@@ -77,9 +77,7 @@ namespace Upgrades
 
         private void UpdateAvailability()
         {
-            #if !UNITY_EDITOR
             Button.interactable = GetAvailable();
-            #endif
 
 			var color = GetAvailableColor(GetAvailable());
 
