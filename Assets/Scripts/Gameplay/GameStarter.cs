@@ -26,8 +26,6 @@ public class GameStarter : MonoBehaviour
         MakeGrid();
     }
 
-    float rateAddup = 0;
-
 	private IEnumerator Start()
 	{
         while (true)
