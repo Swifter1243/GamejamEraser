@@ -28,16 +28,13 @@ public class GameStarter : MonoBehaviour
 
     float rateAddup = 0;
 
-	private void Update()
+	private IEnumerator Start()
 	{
-        rateAddup += Time.deltaTime * idleRate.CurrentValue;
-        
-        while (rateAddup >= 1) {
-            rateAddup -= 1;
-			if (gridSpawner.TurnRandomButtonOff())
-            {
-				StatsFormat.bytesAutomatedThisSecond += CellValue.CurrentValue;
-			}
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            int n = gridSpawner.TurnRandomButtonsOff(idleRate.CurrentValue);
+            StatsFormat.bytesAutomatedThisSecond += CellValue.CurrentValue * n;
         }
 	}
 
