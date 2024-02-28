@@ -46,7 +46,7 @@ public static class Helpers
     public static Vector2 To2D(this Vector3 v3) => v3;
     public static Vector3 To3D(this Vector2 v2, float z = 0f) => new(v2.x, v2.y, z);
 
-    public static string[] byteUnits = new string[] {"b", "kB", "mb", "gb", "tb" };
+    public static string[] byteUnits = new string[] {"B", "kB", "MB", "GB", "TB", "PB" };
 
     public static string FormatBytes(int bytes)
     {
@@ -58,6 +58,6 @@ public static class Helpers
             unit++;
         }
 
-        return $"{bytes}{byteUnits[unit]}";
+        return $"{bytes} {byteUnits[unit]}";
     }
 }

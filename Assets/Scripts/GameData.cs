@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using Upgrades;
 
@@ -13,7 +14,15 @@ public static class GameData
         .ToArray();
     private static UpgradeData[] _allUpgrades;
 
-    private static int TotalSpent => AllUpgrades.Sum(upgrade => upgrade.Spent);
+    public static string MaxFormatted = Helpers.FormatBytes(int.MaxValue);
+
+	[MenuItem("Assets/Reset Game Lol")]
+	static void ResetGame()
+	{
+        PlayerPrefs.DeleteAll();
+	}
+
+	private static int TotalSpent => AllUpgrades.Sum(upgrade => upgrade.Spent);
 
     public static int BytesRemaining
     {
