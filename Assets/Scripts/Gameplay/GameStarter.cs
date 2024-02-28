@@ -18,6 +18,9 @@ public class GameStarter : MonoBehaviour
 	[field: SerializeField]
 	public FloatUpgradeData AnimationTimeUpgrade { get; private set; }
 
+	[field: SerializeField]
+	public IntUpgradeData CellValue { get; private set; }
+
 	void Awake()
     {
         MakeGrid();
@@ -31,7 +34,10 @@ public class GameStarter : MonoBehaviour
         
         while (rateAddup >= 1) {
             rateAddup -= 1;
-            gridSpawner.TurnRandomButtonOff();
+			if (gridSpawner.TurnRandomButtonOff())
+            {
+				StatsFormat.bytesAutomatedThisSecond += CellValue.CurrentValue;
+			}
         }
 	}
 

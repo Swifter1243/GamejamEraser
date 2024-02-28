@@ -19,8 +19,7 @@ public class GridSpawner : MonoBehaviour
 		if (list.Count() == 0) return false;
 
 		int index = Random.Range(0, list.Count());
-		list.ToList()[index].TurnOff();
-		return true;
+		return list.ToList()[index].TurnOff();
 	}
 
 	public void PopulateGrid(int grid)

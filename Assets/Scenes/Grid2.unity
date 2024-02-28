@@ -606,6 +606,7 @@ MonoBehaviour:
   cameraScaler: {fileID: 405004202}
   addressFormat: {fileID: 474540666}
   <AnimationTimeUpgrade>k__BackingField: {fileID: 11400000, guid: 15e03406dd86a2b4d9c4a393c21c9aeb, type: 2}
+  <CellValue>k__BackingField: {fileID: 11400000, guid: ec56cffe35935f24a8f710b15656dc7d, type: 2}
 --- !u!224 &371159363 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2616990733179689785, guid: 6cf817602941d1f46901f0532fc1efe9, type: 3}
@@ -1602,7 +1603,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_HandleRect: {fileID: 969745902}
   m_Direction: 2
-  m_Value: 0.43643352
+  m_Value: 0.4999999
   m_Size: 0.45105466
   m_NumberOfSteps: 6
   m_OnValueChanged:
