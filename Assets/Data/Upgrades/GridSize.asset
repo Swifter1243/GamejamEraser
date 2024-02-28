@@ -17,13 +17,19 @@ MonoBehaviour:
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: 4x4
     <Value>k__BackingField: {x: 4, y: 4}
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 8x8
     <Value>k__BackingField: {x: 8, y: 8}
+    <Cost>k__BackingField: 250
   - <Name>k__BackingField: 12x12
     <Value>k__BackingField: {x: 12, y: 12}
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 16x16
     <Value>k__BackingField: {x: 16, y: 16}
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 32x32
     <Value>k__BackingField: {x: 32, y: 32}
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 64x64
     <Value>k__BackingField: {x: 64, y: 64}
+    <Cost>k__BackingField: 0

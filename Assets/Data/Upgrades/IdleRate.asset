@@ -18,15 +18,12 @@ MonoBehaviour:
   - <Name>k__BackingField: 0/s
     <Value>k__BackingField: 0
     <Cost>k__BackingField: 0
-  - <Name>k__BackingField: 1/s
-    <Value>k__BackingField: 1
-    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 2/s
     <Value>k__BackingField: 2
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 250
   - <Name>k__BackingField: 4/s
     <Value>k__BackingField: 4
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 500
   - <Name>k__BackingField: 8/s
     <Value>k__BackingField: 8
     <Cost>k__BackingField: 0
@@ -38,13 +35,4 @@ MonoBehaviour:
     <Cost>k__BackingField: 0
   - <Name>k__BackingField: 64/s
     <Value>k__BackingField: 64
-    <Cost>k__BackingField: 0
-  - <Name>k__BackingField: 128/s
-    <Value>k__BackingField: 128
-    <Cost>k__BackingField: 0
-  - <Name>k__BackingField: 256/s
-    <Value>k__BackingField: 256
-    <Cost>k__BackingField: 0
-  - <Name>k__BackingField: 512/s
-    <Value>k__BackingField: 512
     <Cost>k__BackingField: 0
