@@ -7,6 +7,7 @@ public class ResetHotkey : MonoBehaviour
 {
     void Update()
     {
+        // Reset
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.R))
         {
             GameData.ResetData();
@@ -21,5 +22,11 @@ public class ResetHotkey : MonoBehaviour
                 obj.RemakeGrid();
 			}
 		}
+
+        // Erase Hella Bytes
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.E))
+        {
+            GameData.EraseBytes(2000000);
+        }
     }
 }
