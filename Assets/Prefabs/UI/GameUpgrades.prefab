@@ -39,7 +39,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -8.5, y: 70.400055}
+  m_AnchoredPosition: {x: -8.5, y: -70.400024}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1315691854856286209
@@ -218,6 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7253577534820609584}
   - component: {fileID: 7855216365862629228}
+  - component: {fileID: 6277320099825437339}
   m_Layer: 5
   m_Name: UpgradeScrollbar
   m_TagString: Untagged
@@ -288,12 +289,25 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_HandleRect: {fileID: 4227735198442287310}
   m_Direction: 2
-  m_Value: 0.5
-  m_Size: 0.44999996
+  m_Value: 0.50000006
+  m_Size: 0.45
   m_NumberOfSteps: 6
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6277320099825437339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111392918531433325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da44cfc377d81aa4a8c6a32943bdfdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
 --- !u!1 &7307326212513439760
 GameObject:
   m_ObjectHideFlags: 0
