@@ -9,6 +9,9 @@ public class Eraser : MonoBehaviour
 	[field: SerializeField]
 	public IntUpgradeData CellValue { get; private set; }
 
+    [field: SerializeField]
+    public BoolUpgradeData ElasticBand { get; private set; }
+
 	[field: SerializeField]
     public Camera Camera { get; private set; }
 
@@ -22,7 +25,7 @@ public class Eraser : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) || ElasticBand.CurrentValue)
         {
             Vector2 mousePos = Camera.ScreenToWorldPoint(Input.mousePosition) + Vector3.one / 2f;
             Vector2Int floored = mousePos.ToInt();
