@@ -35,6 +35,8 @@ public class AmbientStream : MonoBehaviour
 	private float intensitySpread;
 	[Range(0,1)]
 	public float debugIntensity;
+	private const float INTENSITY_SCALE = 3 / 20;
+	private const float INTENSITY_LOGSCALE = 1 / 7;
 
 
     public void AmbientStart()
@@ -57,7 +59,7 @@ public class AmbientStream : MonoBehaviour
 		}
     }
 
-
+	
 
 
 
@@ -99,9 +101,6 @@ public class AmbientStream : MonoBehaviour
 			if (lastSource != null && lastSource.isPlaying)
 			{
 				nextClipIn = (double)lastClip.length - lastSource.time;
-
-				Debug.Log($"Playing ${nextClip.name} in {nextClipIn}");
-
 				nextSource.PlayScheduled(AudioSettings.dspTime + nextClipIn + AudioStatics.dspEpsilon);
 			}
 			else
@@ -127,19 +126,19 @@ public class AmbientStream : MonoBehaviour
 
 
 
-
-
 	AudioClip GetNextClip()
 	{
 		AudioClip nextClip;
 
-		float intensity = debugIntensity;
+		float intensity = Mathf.Clamp(Mathf.Log10(StatsFormat.deltaBytes) * INTENSITY_LOGSCALE, 0, 1);
+		Debug.Log($"Playing next clip with intensity {intensity}");
 
+		//Random distribution along a target intensity where intensity is proportional to the index
 		do
 		{
 			float range = 1 - intensitySpread;
-			float spread = Random.Range(0, range);
-			nextClip = clips[Mathf.FloorToInt(range + spread * clips.Count())];
+			float spread = Random.Range(0, intensitySpread);
+			nextClip = clips[Mathf.FloorToInt((spread + intensity * range) * clips.Count())];
 		} while (lastClip == nextClip);
 
 		return nextClip;

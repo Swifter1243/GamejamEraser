@@ -29,6 +29,10 @@ public class StatsFormat : MonoBehaviour
     private int _lastBytes;
     private UpgradeData[] _upgrades;
 
+    //THIS IS DIRTY :(
+    public static int deltaBytes;
+
+
     void Start()
     {
         _startTime = Time.time;
@@ -53,8 +57,8 @@ public class StatsFormat : MonoBehaviour
 
     private void UpdateRate()
     {
-        int rate = _lastBytes - GameData.BytesRemaining;
-        rateText.text = string.Format(formatRateString, Helpers.FormatBytes(rate));
+        deltaBytes = _lastBytes - GameData.BytesRemaining;
+        rateText.text = string.Format(formatRateString, Helpers.FormatBytes(deltaBytes));
 
         _lastBytes = GameData.BytesRemaining;
     }

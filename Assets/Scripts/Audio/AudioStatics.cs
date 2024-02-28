@@ -20,18 +20,16 @@ public class AudioStatics : MonoBehaviour
 	[SerializeField]
 	private AmbientStream ambience;
 
-	private void Start()
+	private void Awake()
 	{
 		instance = this;
 
         AudioSettings.GetDSPBufferSize(out int bufferLength, out int numBuffers);
         dspBufferLength = (float)bufferLength / AudioSettings.outputSampleRate * 2;
         dspEpsilon = 1.0d / AudioSettings.outputSampleRate;
-		
-		//ambience.AmbientStart();
     }
-
-
-
-
+    private void Start()
+    {
+		ambience.AmbientStart();
+    }
 }
