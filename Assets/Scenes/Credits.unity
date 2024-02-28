@@ -279,9 +279,9 @@ MonoBehaviour:
     error=1337\r\n\r\nJ:\\>ZERO.BIN\r\nExiting due to signal SIGSEGV\r\nPage fault
     at eip-00002113, error=0006\r\neax=00000e08 ebx-0009989e ecx-00099780 edx=0000033f
     \r\nesi-000998b8 edi=00000009 ebp-00099768 esp-00099750 \r\nprogram=J:\\>ZERO.BIN\r\ncs: 
-    sel-00a7  base-10000000  limit=0009ffff \r\nds:  sel-00af  base=10000000  limit=0009ffff
-    \r\nes:  sel=00af  base=10000000  limit=0009ffff \r\nfs:  sel-008f  base=00001a20 
-    limit=0000ffff \r\ngs:  sel=00bf  base=00000000  limit=0010ffff \r\nss:  sel-00af 
+    sel=00a7  base-10000000  limit=0009ffff \r\nds:  sel=00af  base=10000000  limit=0009ffff
+    \r\nes:  sel=00af  base=10000000  limit=0009ffff \r\nfs:  sel=008f  base=00001a20 
+    limit=0000ffff \r\ngs:  sel=00bf  base=00000000  limit=0010ffff \r\nss:  sel=00af 
     base=10000000  limit=0009ffff\r\nApp stack: [000997e0..000197e4]\r\nException
     stack: [00019730..000117f0]\r\n\r\nCall frame traceback EIPs:\r\n  0x00002113\r\n\r\n\r\n\r\n\r\n       
     _____ _____  ______ _____ _____ _______ _____ \r\n       / ____|  __ \\|  ____| 
