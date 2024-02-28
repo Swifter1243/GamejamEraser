@@ -1,10 +1,28 @@
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
+using Upgrades;
 
 public static class GameData
 {
-    //private static Progress Progress => _progress ? _progress : _progress = Object.FindObjectOfType<Progress>();
     private static ProgressFormat Progress => _progress ? _progress : _progress = Object.FindObjectOfType<ProgressFormat>();
     private static ProgressFormat _progress;
+
+    private static UpgradeData[] AllUpgrades => _allUpgrades ??= Object
+        .FindObjectsOfType<UpgradeUI>()
+        .Select(ui => ui.Upgrade)
+        .ToArray();
+    private static UpgradeData[] _allUpgrades;
+
+    public static string MaxFormatted = Helpers.FormatBytes(int.MaxValue);
+
+	[MenuItem("Assets/Reset Game Lol")]
+	static void ResetGame()
+	{
+        PlayerPrefs.DeleteAll();
+	}
+
+	private static int TotalSpent => AllUpgrades.Sum(upgrade => upgrade.Spent);
 
     public static int BytesRemaining
     {
@@ -12,19 +30,11 @@ public static class GameData
         private set => PlayerPrefs.SetInt("bytes_remaining", value);
     }
 
-    public static int Currency
-    {
-        get => PlayerPrefs.GetInt("currency", 0);
-        private set => PlayerPrefs.SetInt("currency", value);
-    }
+    public static int Currency => int.MaxValue - BytesRemaining - TotalSpent;
 
     public static void EraseBytes(int amount)
     {
         BytesRemaining -= amount;
-        Currency += amount;
-
-        ProgressFormat progress = Progress;
-
         Progress.Progress = BytesRemaining;
     }
 }

@@ -45,4 +45,19 @@ public static class Helpers
     public static Vector3Int To3D(this Vector2Int v2, int z = 0) => new(v2.x, v2.y, z);
     public static Vector2 To2D(this Vector3 v3) => v3;
     public static Vector3 To3D(this Vector2 v2, float z = 0f) => new(v2.x, v2.y, z);
+
+    public static string[] byteUnits = new string[] {"B", "kB", "MB", "GB", "TB", "PB" };
+
+    public static string FormatBytes(int bytes)
+    {
+        int unit = 0;
+
+        while (bytes >= 1000)
+        {
+			bytes /= 1000;
+            unit++;
+        }
+
+        return $"{bytes} {byteUnits[unit]}";
+    }
 }
