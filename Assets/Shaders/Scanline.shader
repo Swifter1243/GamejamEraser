@@ -36,8 +36,8 @@ Shader "Unlit/Scanline"
 
             float hashwithoutsine11(float p)
             {
-                p = frac(p * .1031);
-                p *= p + 33.33;
+                p = frac(p * .69420);
+                p *= p + 498.69;
                 p *= p + p;
                 return frac(p);
             }
