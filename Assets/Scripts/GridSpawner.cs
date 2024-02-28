@@ -8,8 +8,6 @@ public class GridSpawner : MonoBehaviour
 	public GameObject gridObject;
 	public GameStarter gameStarter;
 
-	bool descending = false;
-
 	public Dictionary<Vector2Int, GridButton> buttons = new Dictionary<Vector2Int, GridButton>();
 
 	public IEnumerable<GridButton> GetAllButtonsOn() => buttons.Values.Where(x => !x.isOff);
@@ -23,14 +21,6 @@ public class GridSpawner : MonoBehaviour
 		int index = Random.Range(0, list.Count());
 		list.ToList()[index].TurnOff();
 		return true;
-	}
-
-	private void Update()
-	{
-		if (descending)
-		{
-			transform.Translate(0, -10 * Time.deltaTime, 0);
-		}
 	}
 
 	public void PopulateGrid(int grid)
@@ -61,20 +51,12 @@ public class GridSpawner : MonoBehaviour
 
 	public void CheckDone()
 	{
-		bool allFlipped = buttons.Values.All(x => x.isOff);
+		bool allFlipped = buttons.Values.All(x => x.isOff && x.isReady);
 
 		if (allFlipped)
 		{
-			StartCoroutine(DoAnimation());
-			descending = true;
+			Destroy(gameObject);
+			gameStarter.MakeGrid();
 		}
-	}
-
-	public IEnumerator DoAnimation()
-	{
-		yield return new WaitForSeconds(1f);
-
-		Destroy(gameObject);
-		gameStarter.MakeGrid();
 	}
 }
