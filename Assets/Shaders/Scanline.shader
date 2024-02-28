@@ -5,6 +5,7 @@ Shader "Unlit/Scanline"
         _MainTex ("Texture", 2D) = "white" {}
         _BlurSpread ("Blur Spread", Range(0, 0.03)) = 0.01
         _Iterations ("Iterations", Integer) = 10
+        _Distortion ("Distortion", Range(0, 0.3)) = 0.07
     }
     SubShader
     {
@@ -33,6 +34,7 @@ Shader "Unlit/Scanline"
 
             float _BlurSpread;
             int _Iterations;
+            float _Distortion;
 
             float hashwithoutsine11(float p)
             {
@@ -47,7 +49,7 @@ Shader "Unlit/Scanline"
                 i.uv = i.uv * 2 - 1;
                 float f = pow(abs(i.uv.x), 2);
                 //i.uv.y = lerp(i.uv.y, pow(i.uv.y, 3), 0.3);
-                i.uv.y *= 1 + f * 0.1;
+                i.uv.y *= 1 + f * _Distortion;
                 i.uv = (i.uv + 1) * 0.5;
 
                 float4 col = getScreenColor(i.uv);
