@@ -68,16 +68,14 @@ public class GridButton : MonoBehaviour
 		}
 	}
 
-	public void TurnOff()
+	public bool TurnOff()
 	{
-		if (!isReady) return;
+		if (!isReady || isOff) return false;
 
-		if (!isOff)
-		{
-			GameData.EraseBytes(cellValue.CurrentValue);
-			UpdateFlip(true);
-			gridSpawner.CheckDone();
-		}
+		GameData.EraseBytes(cellValue.CurrentValue);
+		UpdateFlip(true);
+		gridSpawner.CheckDone();
+		return true;
 	}
 
 	public void MakeReady()

@@ -10,8 +10,6 @@ public class StatsFormat : MonoBehaviour
     public string formatAutoRateString;
     [TextArea]
     public string formatUserRateString;
-    [TextArea]
-    public string formatCurrencyString;
 
     [SerializeField]
     private TMP_Text rateText;
@@ -19,24 +17,21 @@ public class StatsFormat : MonoBehaviour
     private TMP_Text autoRateText;
     [SerializeField]
     private TMP_Text userRateText;
-    [SerializeField]
-    private TMP_Text currencyText;
+
+    public static int bytesErasedThisSecond = 0;
+    public static int bytesAutomatedThisSecond = 0;
 
     public int Rate
     {
-        set { rateText.text = string.Format(formatRateString, value); }
+        set { rateText.text = string.Format(formatRateString, Helpers.FormatBytes(value)); }
     }
     public int AutoRate
     {
-        set { autoRateText.text = string.Format(formatAutoRateString, value); }
+        set { autoRateText.text = string.Format(formatAutoRateString, Helpers.FormatBytes(value)); }
     }
     public int UserRate
     {
-        set { userRateText.text = string.Format(formatUserRateString, value); }
-    }
-    public int Currency
-    {
-        set { currencyText.text = string.Format(formatCurrencyString, value); }
+        set { userRateText.text = string.Format(formatUserRateString, Helpers.FormatBytes(value)); }
     }
 
 
@@ -48,19 +43,16 @@ public class StatsFormat : MonoBehaviour
     IEnumerator UpdateStats()
     {
         int lastBytes = GameData.BytesRemaining;
-        int lastCurrency = GameData.Currency;
+
         while (GameData.BytesRemaining > 0)
         {
-            int deltaBytes = lastBytes - GameData.BytesRemaining;
-            Rate = deltaBytes;
-            
-            //AutoRate = deltaBytes - 
-            
-            Currency = lastCurrency - GameData.Currency;
-            
+            Rate = lastBytes - GameData.BytesRemaining;
+            UserRate = bytesErasedThisSecond;
+            AutoRate = bytesAutomatedThisSecond;
 
-            lastBytes = GameData.BytesRemaining;
-            lastCurrency = GameData.Currency;
+			lastBytes = GameData.BytesRemaining;
+            bytesErasedThisSecond = 0;
+            bytesAutomatedThisSecond = 0;
             yield return new WaitForSeconds(1f);
         }
     }

@@ -12,21 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8cdc46ba8fcb342899c9c5cf19e1e4, type: 3}
   m_Name: CursorRadius
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Cursor Radius
+  <Name>k__BackingField: Cursor Shape
   <Key>k__BackingField: cursor_radius
   <Upgrades>k__BackingField:
-  - <Name>k__BackingField: 1
-    <Value>k__BackingField: 0.9
+  - <Name>k__BackingField: Square
+    <Value>k__BackingField: 0.5
     <Cost>k__BackingField: 0
-  - <Name>k__BackingField: 2
+  - <Name>k__BackingField: Cross
+    <Value>k__BackingField: 1
+    <Cost>k__BackingField: 100
+  - <Name>k__BackingField: 3x3 Square
     <Value>k__BackingField: 1.5
-    <Cost>k__BackingField: 0
-  - <Name>k__BackingField: 3
+    <Cost>k__BackingField: 2500
+  - <Name>k__BackingField: Circle
     <Value>k__BackingField: 2.25
-    <Cost>k__BackingField: 0
-  - <Name>k__BackingField: 4
-    <Value>k__BackingField: 3.25
-    <Cost>k__BackingField: 0
-  - <Name>k__BackingField: 5
-    <Value>k__BackingField: 4.25
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 10000
+  - <Name>k__BackingField: Big Circle
+    <Value>k__BackingField: 3.5
+    <Cost>k__BackingField: 50000
+  - <Name>k__BackingField: Bigger Circle
+    <Value>k__BackingField: 4.5
+    <Cost>k__BackingField: 100000
+  - <Name>k__BackingField: Biggest Circle
+    <Value>k__BackingField: 6.5
+    <Cost>k__BackingField: 500000
+  - <Name>k__BackingField: Biggester Circle
+    <Value>k__BackingField: 8.5
+    <Cost>k__BackingField: 100000000
+  - <Name>k__BackingField: Biggestest Circle
+    <Value>k__BackingField: 12.5
+    <Cost>k__BackingField: 500000000

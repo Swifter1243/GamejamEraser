@@ -5,8 +5,11 @@ public class Eraser : MonoBehaviour
 {
     [field: SerializeField]
     public FloatUpgradeData CursorSize { get; private set; }
-    
-    [field: SerializeField]
+
+	[field: SerializeField]
+	public IntUpgradeData CellValue { get; private set; }
+
+	[field: SerializeField]
     public Camera Camera { get; private set; }
 
     private GameStarter GameStarter;
@@ -50,8 +53,8 @@ public class Eraser : MonoBehaviour
         {
             if (GameStarter.gridSpawner.buttons.TryGetValue(pos, out GridButton button))
             {
-                button.TurnOff();
-            }
+				if (button.TurnOff()) StatsFormat.bytesErasedThisSecond += CellValue.CurrentValue;
+			}
         }
     }
 }

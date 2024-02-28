@@ -12,9 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8cdc46ba8fcb342899c9c5cf19e1e4, type: 3}
   m_Name: AnimationTime
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Register Transfer Time
+  <Name>k__BackingField: Register Delay
   <Key>k__BackingField: animation_time
   <Upgrades>k__BackingField:
+  - <Name>k__BackingField: 2s
+    <Value>k__BackingField: 2
+    <Cost>k__BackingField: 0
   - <Name>k__BackingField: 1s
     <Value>k__BackingField: 1
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 500
+  - <Name>k__BackingField: 0.5s
+    <Value>k__BackingField: 0.5
+    <Cost>k__BackingField: 25000
+  - <Name>k__BackingField: 0.25s
+    <Value>k__BackingField: 0.25
+    <Cost>k__BackingField: 4000000
