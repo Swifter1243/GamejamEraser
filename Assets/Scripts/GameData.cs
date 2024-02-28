@@ -16,8 +16,10 @@ public static class GameData
 
     public static string MaxFormatted = Helpers.FormatBytes(int.MaxValue);
 
+    #if UNITY_EDITOR
 	[MenuItem("Assets/Reset Game Lol")]
-	static void ResetGame()
+    #endif
+	public static void ResetGame()
 	{
         PlayerPrefs.DeleteAll();
 	}
