@@ -58,7 +58,7 @@ MonoBehaviour:
   <Upgrade>k__BackingField: {fileID: 0}
   <Text>k__BackingField: {fileID: 8386480844177468414}
   <Button>k__BackingField: {fileID: 3255754969131404789}
-  <SellButton>k__BackingField: {fileID: 0}
+  <SellButton>k__BackingField: {fileID: 8933910550155335294}
   <ButtonText>k__BackingField: {fileID: 3327546381050159405}
   <CurrentText>k__BackingField: {fileID: 7566055200424350480}
   rt: {fileID: 0}
@@ -368,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8165653653636670140, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -96
+      value: -179.65
       objectReference: {fileID: 0}
     - target: {fileID: 8165653653636670140, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8165653653636670140, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -41.82
       objectReference: {fileID: 0}
     - target: {fileID: 8165653653636670140, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -477,11 +477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 87.92
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 71.8
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -513,11 +513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -64
+      value: -82.08
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64
+      value: -76.1
       objectReference: {fileID: 0}
     - target: {fileID: 63047141741019045, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -534,6 +534,14 @@ PrefabInstance:
     - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_text
       value: '[$]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
+      propertyPath: m_fontSize
+      value: 48.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 48.88
       objectReference: {fileID: 0}
     - target: {fileID: 3718452769741733572, guid: cf653b44a0c930e43a72a835e9bb4ea8, type: 3}
       propertyPath: m_RaycastTarget
@@ -601,10 +609,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6377357, g: 0.6377357, b: 0.6377357, a: 1}
+    m_PressedColor: {r: 0.3132075, g: 0.3132075, b: 0.3132075, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
+    m_DisabledColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

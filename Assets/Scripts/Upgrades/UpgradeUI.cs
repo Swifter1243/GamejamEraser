@@ -40,7 +40,13 @@ namespace Upgrades
                 Upgrade.Level++;
                 Refresh();
             });
-        }
+
+			SellButton.onClick.AddListener(() =>
+			{
+				Upgrade.Level--;
+				Refresh();
+			});
+		}
 
         private void Update()
         {
@@ -51,6 +57,12 @@ namespace Upgrades
         {
             UpdateButtonText();
             UpdateAvailability();
+            UpdateSellAvailability();
+		}
+
+        public Color GetAvailableColor(bool available)
+        {
+            return available ? Color.white : Color.white * 0.5f;
 		}
 
 		public bool GetAvailable()
@@ -58,18 +70,28 @@ namespace Upgrades
             return !Upgrade.IsMaxLevel && GameData.Currency >= Upgrade.NextCost;
 		}
 
+        public bool GetSellAvailable()
+        {
+            return Upgrade.Level != 0 && GameData.BytesRemaining > Upgrade.CurrentCost;
+        }
+
         private void UpdateAvailability()
         {
             #if !UNITY_EDITOR
             Button.interactable = GetAvailable();
             #endif
 
-			var color = GetAvailable() ? Color.white : Color.white * 0.5f;
+			var color = GetAvailableColor(GetAvailable());
 
             Text.color = color;
             Button.GetComponent<TextMeshProUGUI>().color = color;
             ButtonText.color = color;
             CurrentText.color = color;
+		}
+
+        private void UpdateSellAvailability()
+        {
+			SellButton.interactable = GetSellAvailable();
 		}
 
         private void UpdateButtonText()
