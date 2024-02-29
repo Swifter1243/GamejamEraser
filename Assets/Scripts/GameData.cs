@@ -23,6 +23,7 @@ public static class GameData
 	public static void ResetData()
 	{
         PlayerPrefs.DeleteAll();
+        StatsFormat.timeElapsed = 0;
 	}
 
 	private static int TotalSpent => AllUpgrades.Sum(upgrade => upgrade.Spent);
