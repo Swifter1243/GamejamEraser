@@ -67,7 +67,6 @@ public class AudioStatics : MonoBehaviour
 
     private void OnPointerEnter(object sender, EventArgs evt)
     {
-		Debug.Log("FUCK1");
 		AudioSource.PlayClipAtPoint(
 			uiMouseHover[UnityEngine.Random.Range(0, uiMouseHover.Count)],
             Vector3.zero
@@ -75,7 +74,6 @@ public class AudioStatics : MonoBehaviour
     }
     private void OnPointerExit(object sender, EventArgs evt)
     {
-		Debug.Log("FUCK2");
         AudioSource.PlayClipAtPoint(
             uiMouseHover[UnityEngine.Random.Range(0, uiMouseHover.Count)],
             Vector3.zero
@@ -83,7 +81,6 @@ public class AudioStatics : MonoBehaviour
     }
     private void OnPointerDown(object sender, EventArgs evt)
     {
-		Debug.Log("FUCK3");
         AudioSource.PlayClipAtPoint(
             uiMouseDown[UnityEngine.Random.Range(0, uiMouseDown.Count)],
             Vector3.zero
@@ -91,7 +88,6 @@ public class AudioStatics : MonoBehaviour
     }
     private void OnPointerUp(object sender, EventArgs evt)
     {
-		Debug.Log("FUCK4");
         AudioSource.PlayClipAtPoint(
             uiMouseUp[UnityEngine.Random.Range(0, uiMouseUp.Count)],
             Vector3.zero
