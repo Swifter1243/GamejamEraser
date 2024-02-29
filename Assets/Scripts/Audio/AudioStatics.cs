@@ -43,39 +43,20 @@ public class AudioStatics : MonoBehaviour
 	public void AddCallbacks(AsyncOperation asyncScene, string sceneName)
 	{
 		//Scene scene = SceneManager.GetSceneByName(sceneName);
-		//List<EventTrigger> triggers = new List<EventTrigger>();
+		//List<PointerEvent> triggers = new List<PointerEvent>();
 		//
 		//foreach(GameObject obj in scene.GetRootGameObjects())
 		//{
 		//	//This is stupid but whatever
-		//	List<EventTrigger> tempTriggers = new List<EventTrigger>();
+		//	List<PointerEvent> tempTriggers = new List<PointerEvent>();
 		//	obj.GetComponentsInChildren(tempTriggers);
 		//	triggers.AddRange(tempTriggers);
 		//}
 		//
-		//foreach(EventTrigger trigger in triggers)
+		//foreach(PointerEvent trigger in triggers)
 		//{
-		//
-		//	EventTrigger.Entry evtTrig;
-		//	evtTrig = new();
-		//	evtTrig.eventID = EventTriggerType.PointerEnter;
-        //    OnPointerEnter()
-		//
-		//
-        //    evtTrig = new();
-		//	evtTrig.eventID = EventTriggerType.PointerExit;
-		//	evtTrig = new();
-		//	evtTrig.eventID = EventTriggerType.PointerUp;
-		//	evtTrig = new();
-		//	evtTrig.eventID = EventTriggerType.PointerDown;
-		//
-		//
-        //    trigger.triggers.Add()
-		//
-		//
-		//
-		//	trigger.callba.add	+= OnPointerEnter();
-		//	trigger.OnPointerExit	+= OnPointerExit();
+		//	trigger.PointerEnterEvent	+= OnPointerEnter();
+		//	trigger.PointerExitEvent	+= OnPointerExit();
 		//	trigger.OnPointerDown	+= OnPointerDown();
 		//	trigger.OnPointerUp		+=
 		//}
@@ -85,19 +66,19 @@ public class AudioStatics : MonoBehaviour
 
     private void OnPointerEnter(PointerEventData evt)
     {
-
+		Debug.Log("Pointer Enter");
     }
     private void OnPointerExit(PointerEventData evt)
     {
-
+		Debug.Log("Pointer Exit");
     }
     private void OnPointerDown(PointerEventData evt)
     {
-
+		Debug.Log("Pointer Down");
     }
     private void OnPointerUp(PointerEventData evt)
     {
-
+		Debug.Log("Pointer Up");
     }
 
 
