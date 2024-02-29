@@ -607,6 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CursorSize>k__BackingField: {fileID: 11400000, guid: e3d2be004774b454ebcb5519d1e3efb1, type: 2}
   <CellValue>k__BackingField: {fileID: 11400000, guid: ec56cffe35935f24a8f710b15656dc7d, type: 2}
+  <ElasticBand>k__BackingField: {fileID: 11400000, guid: 5d4801b21fca741498744febc37cc798, type: 2}
   <Camera>k__BackingField: {fileID: 405004200}
 --- !u!4 &1773507558
 Transform:
@@ -951,7 +952,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2270896231470542619, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -70.39996
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787091164605776650, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787091164605776650, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787091164605776650, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787091164605776650, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787091164605776650, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787091164605776650, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4096377401521294529, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
       propertyPath: m_AnchorMax.y
