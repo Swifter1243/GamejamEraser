@@ -26,6 +26,8 @@ public class StartupLoad : MonoBehaviour
     {
         //Don't wait for callbacks or anything.
         SceneManager.UnloadSceneAsync(StartupSceneName);
-        SceneManager.LoadSceneAsync(GameSceneName, LoadSceneMode.Additive);
+        AsyncOperation asyncScene = SceneManager.LoadSceneAsync(GameSceneName, LoadSceneMode.Additive);
+
+        asyncScene.completed += (AsyncOperation asyncScene) => { AudioStatics.instance.AddCallbacks(asyncScene, GameSceneName); };
     }
 }

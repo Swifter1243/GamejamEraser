@@ -46,10 +46,9 @@ public static class GameData
 		{
 			Scene toUnload = SceneManager.GetSceneByName("Grid2");
             GameObject[] toDestroy = toUnload.GetRootGameObjects();
+            foreach (GameObject obj in toDestroy) GameObject.Destroy(obj);
 
-			AsyncOperation asyncOp = SceneManager.UnloadSceneAsync(toUnload);
-			asyncOp.completed += (AsyncOperation asyncOp) => { foreach (GameObject obj in toDestroy) GameObject.Destroy(obj); };
-
+            SceneManager.UnloadSceneAsync(toUnload);
 			SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
 			AudioStatics.instance.ambience.AmbientEnd();
 			
