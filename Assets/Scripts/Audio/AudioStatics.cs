@@ -19,10 +19,12 @@ public class AudioStatics : MonoBehaviour
 	private List<AudioClip> uiMouseDown;
 	[SerializeField]
 	private List<AudioClip> uiMouseHover;
-	[SerializeField]
-	private List<AudioClip> uiMouseClick;
+    [SerializeField]
+    private List<AudioClip> uiMouseClick;
+    [SerializeField]
+    private List<AudioClip> uiGrid;
 
-	[SerializeField]
+    [SerializeField]
 	public AmbientStream ambience;
 
 	private void Awake()
@@ -93,6 +95,15 @@ public class AudioStatics : MonoBehaviour
             Vector3.zero
             );
     }
+
+	//FUCK
+    /*public void OnGridOff()
+    {
+        AudioSource.PlayClipAtPoint(
+            uiGrid[UnityEngine.Random.Range(0, uiGrid.Count)],
+            Vector3.zero
+            );
+    }*/
 
 
 

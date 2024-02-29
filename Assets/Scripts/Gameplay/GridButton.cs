@@ -75,6 +75,9 @@ public class GridButton : MonoBehaviour
 		GameData.EraseBytes(cellValue.CurrentValue);
 		UpdateFlip(true);
 		gridSpawner.CheckDone();
+
+		//AudioStatics.instance.OnGridOff();
+
 		return true;
 	}
 

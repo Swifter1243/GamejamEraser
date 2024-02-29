@@ -497,6 +497,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 548dea680fe6b794b854538d27cbbdf9, type: 3}
   - {fileID: 8300000, guid: 2a3860ca7594dad4a9b5c2daf4b10f17, type: 3}
   - {fileID: 8300000, guid: 0df8367b38fb42d4e964ab8c170b04ac, type: 3}
+  uiGrid:
+  - {fileID: 8300000, guid: 2885ae8b886465349bfbf8e81e9cc218, type: 3}
   ambience: {fileID: 660175499}
 --- !u!4 &1065889953
 Transform:
