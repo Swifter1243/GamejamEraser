@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43258cd3801e6f4db6a4e36a3f9855f, type: 3}
   m_Name: CellValue
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Cell Value
+  <Name>k__BackingField: Bit Depth
   <Description>k__BackingField: How much data is contained within one cell.
   <Key>k__BackingField: cell_value
   <Upgrades>k__BackingField:

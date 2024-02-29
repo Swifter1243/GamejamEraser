@@ -123,50 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &93781105
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 93781106}
-  - component: {fileID: 93781107}
-  m_Layer: 0
-  m_Name: ResetGame
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &93781106
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93781105}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.68867946, y: 0.1698314, z: 0.4312156}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &93781107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93781105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68166715aa9dd5c47bcf33e19ac18c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &496217741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,6 +238,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 269436642181495817, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 496217745}
+    - targetCorrespondingSourceObject: {fileID: 269436642181495817, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 496217747}
   m_SourcePrefab: {fileID: 100100000, guid: 9a5070cca5720c44db4bfd97e56dfb6a, type: 3}
 --- !u!224 &496217742 stripped
 RectTransform:
@@ -311,7 +270,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496217743}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3c0e7de146b57c41a8bb44ba3730b6d, type: 3}
   m_Name: 
@@ -333,8 +292,8 @@ MonoBehaviour:
     (___  \r\n      | |    |  _  /|  __| | |  | || |    | |  \\___ \\ \r\n      |
     |____| | \\ \\| |____| |__| || |_   | |  ____) |\r\n       \\_____|_|  \\_\\______|_____/_____| 
     |_| |_____/ \r\n\r\n        St. Lawrence College - Game Jam Winter 2024\r\n\r\n       
-    Evan Kinsman\r\n        Elijah Stafford\r\n        Josh TS\r\n\r\n        Thanks
-    for playing!\r\n\r\n"
+    Evan Kinsman\r\n        Elijah Stafford\r\n        Josh TS\n\n        Time elapsed:
+    {0}\r\n\r\n        Thanks for playing!\r\n\r\n"
   text: {fileID: 496217744}
   textWait: 0
   textWait2: 0
@@ -344,6 +303,46 @@ MonoBehaviour:
   textLineDelayMin: 0.02
   textLineDelayMax: 0.04
   isAutostart: 1
+--- !u!114 &496217747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496217743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49baa96bb8f30944854ece41ad2f30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  format: "App stack: [000997e0..000197e4]\r\nException stack: [00019730..000117f0]\r\n\r\nCall
+    frame traceback EIPs:\r\n  0x00002113\r\nPage fault cr2=a74a1d1c at eip=1c12;
+    flags=3082\r\neax=974a1d1c ebx-00099768 ecx=0000d0ff edx=00000e6f \r\nesi=00000009
+    edi=00000000 ebp=0009ffff esp-00099594 \r\ncs=a7 ds=af es=af fs=0 gs=0 ss=af
+    error=1337\r\n\r\nJ:\\>ZERO.BIN\r\nExiting due to signal SIGSEGV\r\nPage fault
+    at eip-00002113, error=0006\r\neax=00000e08 ebx-0009989e ecx-00099780 edx=0000033f
+    \r\nesi-000998b8 edi=00000009 ebp-00099768 esp-00099750 \r\nprogram=J:\\>ZERO.BIN\r\ncs: 
+    sel=00a7  base-10000000  limit=0009ffff \r\nds:  sel=00af  base=10000000  limit=0009ffff
+    \r\nes:  sel=00af  base=10000000  limit=0009ffff \r\nfs:  sel=008f  base=00001a20 
+    limit=0000ffff \r\ngs:  sel=00bf  base=00000000  limit=0010ffff \r\nss:  sel=00af 
+    base=10000000  limit=0009ffff\r\nApp stack: [000997e0..000197e4]\r\nException
+    stack: [00019730..000117f0]\r\n\r\nCall frame traceback EIPs:\r\n  0x00002113\r\n\r\n\r\n\r\n\r\n       
+    _____ _____  ______ _____ _____ _______ _____ \r\n       / ____|  __ \\|  ____| 
+    __ \\_   _|__   __/ ____|\r\n      | |    | |__) | |__  | |  | || |    | | |
+    (___  \r\n      | |    |  _  /|  __| | |  | || |    | |  \\___ \\ \r\n      |
+    |____| | \\ \\| |____| |__| || |_   | |  ____) |\r\n       \\_____|_|  \\_\\______|_____/_____| 
+    |_| |_____/ \r\n\r\n        St. Lawrence College - Game Jam Winter 2024\r\n\r\n       
+    Evan Kinsman\r\n        Elijah Stafford\r\n        Josh TS\n\n        Time elapsed:
+    {0}\r\n\r\n        Thanks for playing!\r\n\r\n"
+  text: {fileID: 496217744}
+  textWait: 0
+  textWait2: 0
+  textCharDelayMin: 0
+  textCharDelayMax: 0.03
+  textCharDelayThreshold: 0.028
+  textLineDelayMin: 0.02
+  textLineDelayMax: 0.04
+  isAutostart: 0
 --- !u!1 &1675843186
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,4 +566,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 1675843189}
   - {fileID: 2143548043}
-  - {fileID: 93781106}
