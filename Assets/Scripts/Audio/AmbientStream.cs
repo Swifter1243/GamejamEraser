@@ -131,7 +131,7 @@ public class AmbientStream : MonoBehaviour
 		AudioClip nextClip;
 
 		float intensity = Mathf.Clamp(Mathf.Log10(StatsFormat.deltaBytes) * INTENSITY_LOGSCALE, 0, 1);
-		Debug.Log($"Playing next clip with intensity {intensity}");
+		//Debug.Log($"Playing next clip with intensity {intensity}");
 
 		//Random distribution along a target intensity where intensity is proportional to the index
 		do

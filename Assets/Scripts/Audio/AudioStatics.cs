@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioStatics : MonoBehaviour
 {
-	static private AudioStatics instance;
+	static public AudioStatics instance;
 	static public double dspPre; 
 	static public double dspBufferLength; 
 	static public double dspEpsilon; 
@@ -19,7 +19,7 @@ public class AudioStatics : MonoBehaviour
 	private List<AudioClip> uiMouseClick;
 
 	[SerializeField]
-	private AmbientStream ambience;
+	public AmbientStream ambience;
 
 	private void Awake()
 	{

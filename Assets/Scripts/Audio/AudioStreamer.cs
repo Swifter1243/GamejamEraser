@@ -96,7 +96,7 @@ public class AudioStreamer : MonoBehaviour
 		double nextClipIn = TimeUntilStop;
 
 		//Wait until right before over
-        yield return new WaitForSeconds((float)(nextClipIn - dspBufferLength));
+        yield return new WaitForSecondsRealtime((float)(nextClipIn - dspBufferLength));
 		while (isPlaying)
 		{
             //Get next source
@@ -118,7 +118,7 @@ public class AudioStreamer : MonoBehaviour
 			lastSource = nextSource;
 
             //Wait until right before next clip
-            yield return new  WaitForSeconds((float)(nextClipIn - dspBufferLength));
+            yield return new  WaitForSecondsRealtime((float)(nextClipIn - dspBufferLength));
         }
 
 
