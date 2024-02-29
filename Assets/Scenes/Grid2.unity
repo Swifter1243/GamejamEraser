@@ -190,7 +190,6 @@ GameObject:
   m_Component:
   - component: {fileID: 405004201}
   - component: {fileID: 405004200}
-  - component: {fileID: 405004199}
   - component: {fileID: 405004202}
   - component: {fileID: 405004203}
   m_Layer: 0
@@ -200,14 +199,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &405004199
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405004198}
-  m_Enabled: 1
 --- !u!20 &405004200
 Camera:
   m_ObjectHideFlags: 0
@@ -452,8 +443,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960, y: 0}
-  m_SizeDelta: {x: 1920, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 768}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &860754141
 MonoBehaviour:
@@ -952,7 +943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2270896231470542619, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 96
+      value: 95.999985
       objectReference: {fileID: 0}
     - target: {fileID: 3787091164605776650, guid: 10eaa28e34a688c41974e5bde8a254c4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1249,7 +1240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 780128247293372416, guid: 7652d51be856c0942beb8e51b9dba45f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 311.35135
       objectReference: {fileID: 0}
     - target: {fileID: 780128247293372416, guid: 7652d51be856c0942beb8e51b9dba45f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1281,7 +1272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 780128247293372416, guid: 7652d51be856c0942beb8e51b9dba45f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 780128247293372416, guid: 7652d51be856c0942beb8e51b9dba45f, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -471,7 +471,7 @@ MonoBehaviour:
     display..."
   text: {fileID: 902553181}
   textWait: 5
-  textWait2: 5
+  textWait2: 1
   textCharDelayMin: 0
   textCharDelayMax: 0.04
   textCharDelayThreshold: 0.038
