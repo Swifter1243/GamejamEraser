@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,41 +43,41 @@ public class AudioStatics : MonoBehaviour
 
 	public void AddCallbacks(AsyncOperation asyncScene, string sceneName)
 	{
-		//Scene scene = SceneManager.GetSceneByName(sceneName);
-		//List<PointerEvent> triggers = new List<PointerEvent>();
-		//
-		//foreach(GameObject obj in scene.GetRootGameObjects())
-		//{
-		//	//This is stupid but whatever
-		//	List<PointerEvent> tempTriggers = new List<PointerEvent>();
-		//	obj.GetComponentsInChildren(tempTriggers);
-		//	triggers.AddRange(tempTriggers);
-		//}
-		//
-		//foreach(PointerEvent trigger in triggers)
-		//{
-		//	trigger.PointerEnterEvent	+= OnPointerEnter();
-		//	trigger.PointerExitEvent	+= OnPointerExit();
-		//	trigger.OnPointerDown	+= OnPointerDown();
-		//	trigger.OnPointerUp		+=
-		//}
+		Scene scene = SceneManager.GetSceneByName(sceneName);
+		List<PointerEvent> triggers = new List<PointerEvent>();
+		
+		foreach(GameObject obj in scene.GetRootGameObjects())
+		{
+			//This is stupid but whatever
+			List<PointerEvent> tempTriggers = new List<PointerEvent>();
+			obj.GetComponentsInChildren(tempTriggers);
+			triggers.AddRange(tempTriggers);
+		}
+		
+		foreach(PointerEvent trigger in triggers)
+		{
+			trigger.PointerEnterEvent	+= OnPointerEnter;
+			trigger.PointerExitEvent	+= OnPointerExit;
+			trigger.PointerUpEvent		+= OnPointerUp;
+			trigger.PointerDownEvent	+= OnPointerDown;
+		}
 	}
 
 
 
-    private void OnPointerEnter(PointerEventData evt)
+    private void OnPointerEnter(object sender, EventArgs evt)
     {
 		Debug.Log("Pointer Enter");
     }
-    private void OnPointerExit(PointerEventData evt)
+    private void OnPointerExit(object sender, EventArgs evt)
     {
 		Debug.Log("Pointer Exit");
     }
-    private void OnPointerDown(PointerEventData evt)
+    private void OnPointerDown(object sender, EventArgs evt)
     {
 		Debug.Log("Pointer Down");
     }
-    private void OnPointerUp(PointerEventData evt)
+    private void OnPointerUp(object sender, EventArgs evt)
     {
 		Debug.Log("Pointer Up");
     }
