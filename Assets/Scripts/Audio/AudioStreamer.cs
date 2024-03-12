@@ -44,10 +44,6 @@ public class AudioStreamer : MonoBehaviour
             );
         }
 	}
-
-
-
-	bool isStopping = true;
 	bool isPlaying = false;
 
 	void Start()
@@ -65,33 +61,6 @@ public class AudioStreamer : MonoBehaviour
 
 	IEnumerator PlayNext()
 	{
-		/*
-		double nextClipIn = DSP_PRE;
-		do {
-			//Get an audio clip
-			AudioClip nextClip = clips[Random.Range(0, clips.Count)];
-			while (lastClip == nextClip) nextClip = clips[Random.Range(0, clips.Count)];
-
-			//Get the next source
-			sourceIndex = (sourceIndex + 1) % sources.Length;
-			AudioSource nextSource = sources[sourceIndex];
-			nextSource.clip = nextClip;
-
-			if (lastSource == null) nextSource.Play();
-			else
-			{
-				nextClipIn = (lastSource.isPlaying) ? lastClip.length - lastSource.time : DSP_PRE;
-				Debug.Log($"Playing {nextClip.name} in {nextClipIn} while {(nextSource.isPlaying ? "already playing" : "not already playing")}");
-				nextSource.PlayScheduled(nextClipIn + dspEpsilon);
-			}
-
-			lastSource = nextSource;
-			lastClip = nextClip;
-
-			yield return new WaitForSecondsRealtime((float)nextClipIn + nextClip.length - DSP_PRE);
-		} while (!isStopping);
-		 */
-
 		//Get largest of two clip times
 		double nextClipIn = TimeUntilStop;
 

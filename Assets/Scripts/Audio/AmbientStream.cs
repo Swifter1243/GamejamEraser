@@ -30,11 +30,6 @@ public class AmbientStream : MonoBehaviour
 	public bool isPlayingDebug = false;
 	private bool isPlaying = false;
 
-	[SerializeField]
-	[Range(0,1)]
-	private float intensitySpread;
-	[Range(0,1)]
-	public float debugIntensity;
 	private const float INTENSITY_SCALE = 3.0f / 20;
 	private const float INTENSITY_LOGSCALE = 1.0f / 7;
 
@@ -131,13 +126,13 @@ public class AmbientStream : MonoBehaviour
 		AudioClip nextClip;
 
 		float intensity = Mathf.Clamp(Mathf.Log10(StatsFormat.deltaBytes) * INTENSITY_LOGSCALE, 0, 1);
-		//Debug.Log($"Playing next clip with intensity {intensity}");
+		Debug.Log($"Playing next clip with intensity {intensity}");
 
 		//Random distribution along a target intensity where intensity is proportional to the index
 		do
 		{
-			float range = 1 - intensitySpread;
-			float spread = Random.Range(0, intensitySpread);
+			float range = 1 - INTENSITY_SCALE;
+			float spread = Random.Range(0, INTENSITY_SCALE);
 			nextClip = clips[Mathf.FloorToInt((spread + intensity * range) * clips.Count())];
 		} while (lastClip == nextClip);
 

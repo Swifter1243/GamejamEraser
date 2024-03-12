@@ -13,21 +13,24 @@ public class StartupLoad : MonoBehaviour
     [SerializeField]
     private StartupFormat startupText;
 
-    const string StartupSceneName = "Startup";
+    const string STARTUP_SCENE_NAME = "Startup";
 
     private void Start()
     {
         //Wait for audio to load and then play intro.
         AsyncOperation asyncScene = SceneManager.LoadSceneAsync(AudioSceneName, LoadSceneMode.Additive);
+        asyncScene.completed += (AsyncOperation operation) =>
+        {
+            //Don't destroy audio scene on load!
+            GameObject[] toDestroy = SceneManager.GetSceneByName(AudioSceneName).GetRootGameObjects();
+            foreach (GameObject obj in toDestroy) GameObject.DontDestroyOnLoad(obj);
+        };
         asyncScene.completed += (AsyncOperation operation) => { startupText.Startup(LoadMain); };
     }
 
     private void LoadMain()
     {
-        //Don't wait for callbacks or anything.
-        SceneManager.UnloadSceneAsync(StartupSceneName);
-        AsyncOperation asyncScene = SceneManager.LoadSceneAsync(GameSceneName, LoadSceneMode.Additive);
-
+        AsyncOperation asyncScene = SceneManager.LoadSceneAsync(GameSceneName);
         asyncScene.completed += (AsyncOperation asyncScene) => { AudioStatics.instance.AddCallbacks(asyncScene, GameSceneName); };
     }
 }

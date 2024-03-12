@@ -32,7 +32,7 @@ public class AudioStatics : MonoBehaviour
 		instance = this;
 
 		AudioSettings.GetDSPBufferSize(out int bufferLength, out int numBuffers);
-		dspPre = 0.1f;
+		dspPre = 0.3f;
 		dspBufferLength = (float)bufferLength / AudioSettings.outputSampleRate * 2;
 		dspEpsilon = 1.0d / AudioSettings.outputSampleRate;
 	}

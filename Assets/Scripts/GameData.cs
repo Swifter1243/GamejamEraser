@@ -9,6 +9,8 @@ public static class GameData
 	private static ProgressFormat Progress => _progress ? _progress : _progress = Object.FindObjectOfType<ProgressFormat>();
 	private static ProgressFormat _progress;
 
+	const string CREDITS_SCENE_NAME = "Credits";
+
 	private static UpgradeData[] AllUpgrades => _allUpgrades ??= Object
 		.FindObjectsOfType<UpgradeUI>()
 		.Select(ui => ui.Upgrade)
@@ -44,12 +46,7 @@ public static class GameData
 
 		if (BytesRemaining <= 0)
 		{
-			Scene toUnload = SceneManager.GetSceneByName("Grid2");
-            GameObject[] toDestroy = toUnload.GetRootGameObjects();
-            foreach (GameObject obj in toDestroy) GameObject.Destroy(obj);
-
-            SceneManager.UnloadSceneAsync(toUnload);
-			SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
+			SceneManager.LoadScene(CREDITS_SCENE_NAME);
 			AudioStatics.instance.ambience.AmbientEnd();
 			
 			return;
